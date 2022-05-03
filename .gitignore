@@ -1,0 +1,86 @@
+*~
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+.uuid
+
+.extra
+.gitconfig
+.gnupg
+!.gnupg/gpg*.conf
+.irssi/away.log
+.irssi/config*
+.irssi/nicknames_whitelist
+.irssi/otr
+.irssi/saved_colors
+.irssi/scripts/autorun/blocker.pl
+.irssi/startup
+.rainbow_oauth
+.nginx/conf.d/*
+
+Icon?
+.svn
+.AppleDouble
+._*
+
+# Mac crap
+.DS_Store
+
+#############
+## Windows detritus
+#############
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+#############
+## Python
+#############
+
+*.py[co]
+
+# Packages
+*.egg
+*.egg-info
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+#Translations
+*.mo
+
+#Mr Developer
+.mr.developer.cfg
+
+## Directory-based project format:
+.idea/
