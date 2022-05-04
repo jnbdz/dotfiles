@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 # Displays number of upgradeable packages.
-# For this to work, have a `pacman -Sy` command run in the background as a
-# cronjob every so often as root. This script will then read those packages.
-# When clicked, it will run an upgrade via pacman.
+# When clicked, it will run an upgrade via apt.
 #
 # Add the following text as a file in /usr/share/libalpm/hooks/statusbar.hook:
 #
