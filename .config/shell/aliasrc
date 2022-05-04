@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# sudo not required for some system commands
+for command in mount umount sv apt updatedb su shutdown poweroff reboot lsof update-alternatives ; do
+	alias $command="sudo $command"
+done; unset command
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	bc="bc -ql" \
+	mkd="mkdir -pv"
+
+# Youtube-dl shortcuts
+alias \
+	yt="youtube-dl --embed-metadata -i" \
+	yta="yt -x -f bestaudio/best"
+
+# Other
+alias \
+	ffmpeg="ffmpeg -hide_banner" \
+	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport"
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	c="echo something special!" \
+	g="git" \
+	trem="transmission-remote" \
+	sdn="shutdown -h now" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	a="apt" \
+	asearch="apt search" \
+	ainstall="apt install" \
+	aupdate="apt update" \
+	aupgrade="apt upgrade" \
+	xi="sudo xbps-install" \
+	xr="sudo xbps-remove -R" \
+	xq="xbps-query" \
+	xopen="xdg-open" \
+	activeports="lsof -i -P -n | grep LISTEN" \
+	untar="tar -xvf" \
+	ualt="update-alternatives" \
+	switchjava="ualt --config java" \
+	z="zathura"
+
+# Go to
+alias \
+	cdaptpacks="cd /etc/apt/" \
+	cdprojects="cd ~/Projects" \
+	cddwn="cd ~/Downloads" \
+	cddocs="cd ~/Documents" \
+	cdtuts="cd ~/Tutorials" \
+	cdmu="cd ~/Music"
