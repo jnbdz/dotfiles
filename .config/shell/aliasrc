@@ -34,7 +34,8 @@ alias \
 # Other
 alias \
 	ffmpeg="ffmpeg -hide_banner" \
-	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport"
+	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
+	javahome="dirname $(dirname $(readlink -f $(which javac)))"
 
 # List only directories
 # shellcheck disable=SC2139
