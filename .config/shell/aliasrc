@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -123,3 +123,12 @@ alias pubkey="more ~/.ssh/id_ed25519.pub | xclip -selection clipboard | echo '=>
 
 # Pipe my private key to my clipboard.
 alias prikey="more ~/.ssh/id_ed25519 | xclip -selection clipboard | echo '=> Private key copied to pasteboard.'"
+
+alias echot="echo T"
+
+# Screenshot
+capt() {
+	echo $1
+	#sleep $1 && \
+	#xwd -root | xwdtopnm | pnmtopng > capture.png
+}
