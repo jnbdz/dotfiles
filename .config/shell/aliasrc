@@ -127,6 +127,7 @@ alias prikey="more ~/.ssh/id_ed25519 | xclip -selection clipboard | echo '=> Pri
 alias echot="echo T"
 
 # Screenshot
+# Source: https://wiki.debian.org/ScreenShots
 capt() {
 	echo $1
 	#sleep $1 && \
