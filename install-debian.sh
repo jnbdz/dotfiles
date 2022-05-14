@@ -21,4 +21,7 @@ sudo dpkg -i ./PathPicker/fpp_0.7.2_noarch.deb
 cd ~/.tmp
 rm -rf ./PathPicker
 
+# Install iPhone utils
+sudo apt install ifuse usbmuxd libimobiledevice6 libimobiledevice-utils
+
 # Next step...
