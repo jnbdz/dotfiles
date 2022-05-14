@@ -1,0 +1,1 @@
+podman run --net=host --volume="/home/$(whoami)/.Xauthority:/root/.Xauthority:rw" -e DISPLAY=unix$DISPLAY eyes
