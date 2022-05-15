@@ -1,14 +1,14 @@
 # dotfiles
 My dotfiles.
 
-## Installing Kali pkg source in debian
+## Installing Kali pkg source in Debian
 Error: 
-```bash
-W: GPG error: http://kali.download/kali kali-rolling InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ED444FF07D8D0BF6
-E: The repository 'http://http.kali.org/kali kali-rolling InRelease' is not signed.
-N: Updating from such a repository can't be done securely, and is therefore disabled by default.
-N: See apt-secure(8) manpage for repository creation and user configuration details.
-```
+
+> W: GPG error: http://kali.download/kali kali-rolling InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ED444FF07D8D0BF6
+> E: The repository 'http://http.kali.org/kali kali-rolling InRelease' is not signed.
+> N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+> N: See apt-secure(8) manpage for repository creation and user configuration details.
+
 You need to run: 
 ```bash
 gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6
