@@ -1,7 +1,7 @@
 # dotfiles
 My dotfiles.
 
-## Installing Kali pkg source in Debian
+## Changing `/etc/apt/sources.list` in Debian to use Kali pkg source
 Error: 
 ```bash
 W: GPG error: http://kali.download/kali kali-rolling InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ED444FF07D8D0BF6
