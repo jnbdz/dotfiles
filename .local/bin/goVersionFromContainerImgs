@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+goVersionFromContainerImgs() {
+
+	# Fail fast
+	if [[ "$(command -v podman)" == "" ]];
+	then
+		echo " > Podman doesn't seem to be installed"
+		exit 1
+	fi
+
+	local containerGoVersion=$(podman images |& grep -vi erro | grep golang | awk '{ print $2 }' | sort -nr | head -n1)
+
+	# If `podman images` doesn't return any images for golang then the user will get an error
+	if [[ "${containerGoVersion}" == "" ]];
+	then
+		echo " > You don't have any golang containers installed"
+		exit 1
+	fi
+
+	echo ${containerGoVersion}
+}
+goVersionFromContainerImgs
+
+exit 0

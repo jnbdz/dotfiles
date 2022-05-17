@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+goVersion() {
+	local localPath=$PWD
+	local goModPath=${localPath}/go.mod
+		
+	# Checks that you have `go.mod` in the root of your project
+	if test -f "${goModPath}";
+	then
+		local goModData=$(cat ${localPath}/go.mod)
+		local firstRequireLine=$(echo "${goModData}" | awk '/require\s+?\(/{ print NR; exit }')
+		local lastRequireLine=$(echo "${goModData}" | awk '/\)/{ print NR; exit }')	
+
+		if [[ "${firstRequireLine}" == "" ]];
+		then	
+			local modContent="${goModData}" # | grep -v require | grep -E "^go ([1-9])([1-9]+)?\.[1-9]([1-9]+)?$" | sed 's/go //'
+		else
+			local modContent=$(echo "${goModData}" | sed -e "${firstRequireLine},${lastRequireLine}d")
+		fi
+
+		local version=$(echo "${modContent}" | grep -v require | grep -E "^go ([1-9])([1-9]+)?\.[1-9]([1-9]+)?$" | sed 's/go //')
+
+		if [[ "${version}" == "" ]];
+		then
+			goVersionFromContainerImgs
+			exit 0
+		fi
+
+		echo ${version}
+	else
+		# If there is no `go.mod` found then it will try to get the most recent version of golang in your podman images
+		goVersionFromContainerImgs
+	fi
+}
+goVersion
+
+exit 0
