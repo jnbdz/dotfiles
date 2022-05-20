@@ -1,5 +1,5 @@
 # dotfiles
-My dotfiles.
+My dotfiles. At your own risk 🥴
 
 ## Changing `/etc/apt/sources.list` in Debian to use Kali pkg source
 Error: 
