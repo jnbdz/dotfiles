@@ -1,3 +1,21 @@
 #!/usr/bin/env bash
 
-podman run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp rust:1.60.0 rustc ${@}
+rust() {
+	local version="1.60.0"
+	local cargoLib=~/.local/share/cargo/v${version}
+
+	if [ ! -d "${cargoLib}" ];
+	then
+		echo " > Create the directory for storing Cargo libraries"
+		mkdir -p ${cargoLib}
+	fi
+
+	podman run --rm -ti \
+		-v "${PWD}":/usr/src/myapp \
+		-v ${cargoLib}:/root/.cargo \
+		-w /usr/src/myapp \
+		rust:${version} ${@}
+}
+rust ${@}
+
+exit 0
