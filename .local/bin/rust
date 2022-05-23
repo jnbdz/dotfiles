@@ -8,11 +8,14 @@ rust() {
 	then
 		echo " > Create the directory for storing Cargo libraries"
 		mkdir -p ${cargoLib}
+		mkdir -p ${cargoLib}/registry
+		touch ${cargoLib}/.package-cache
 	fi
 
 	podman run --rm -ti \
 		-v "${PWD}":/usr/src/myapp \
-		-v ${cargoLib}:/root/.cargo \
+		-v ${cargoLib}/.package-cache:/usr/local/cargo/.package-cache \
+		-v ${cargoLib}/registry:/usr/local/cargo/registry \
 		-w /usr/src/myapp \
 		rust:${version} ${@}
 }
