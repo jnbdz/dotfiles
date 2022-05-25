@@ -28,3 +28,6 @@ apt update
 - https://github.com/LukeSmithxyz/voidrice
 - https://github.com/LukeSmithxyz/LARBS
 - https://github.com/jessfraz/dotfiles
+
+## TODO
+- Added: https://github.com/zsh-users/zsh-autosuggestions (for systems that don't have it (Kali has it))
