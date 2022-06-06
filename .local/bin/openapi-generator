@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+openapigenerator() {
+	podman run --rm \
+		-v "${PWD}:/local" \
+		openapitools/openapi-generator-cli \
+		generate ${@}
+}
+openapigenerator ${@}
