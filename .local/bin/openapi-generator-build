@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+#@param ${1} Is the name of the programming language used
+#@param ${2} Is the openapi json file
+openapigeneratorbuild() {
+	podman run --rm \
+		-v "${PWD}:/local" \
+		openapitools/openapi-generator-cli \
+		generate \
+		-g ${1} \
+		-o /local/out/${1} \
+		-i ${2}
+}
+openapigeneratorbuild ${@}
