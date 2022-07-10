@@ -11,7 +11,7 @@ Enabling the **kali-last-snapshot** branch is done with the command:
 ```
 deb http://http.kali.org/kali kali-last-snapshot main contrib non-free
 ```
-*Source: https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/#enabling-kali-additional-branches*
+*Source: https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/*
 
 
 Error: 
