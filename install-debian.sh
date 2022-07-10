@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-cd ~
+#cd ~
 
-mkdir -p .tmp
+#mkdir -p .tmp
 
-cd ~/.tmp
+cd /tmp
 
 sudo apt update
 sudo apt upgrade
