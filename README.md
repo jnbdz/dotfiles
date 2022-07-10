@@ -42,7 +42,18 @@ sudo gpg -a --export 7D8D0BF6 | apt-key add -
 apt update
 ```
 
+## Activate the SSH
+Make sure your key access (permission): 
+```bash
+chmod 400 ~/.ssh/id_*
+```
+*Source: https://stackoverflow.com/questions/29933918/ssh-key-permissions-0644-for-id-rsa-pub-are-too-open-on-mac*
 
+Start ssh: 
+```bash
+eval "$(ssh-agent -s)"
+```
+*Source: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent*
 
 ## Inspired by
 - https://github.com/LukeSmithxyz/voidrice
