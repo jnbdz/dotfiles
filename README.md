@@ -43,6 +43,13 @@ apt update
 ```
 
 ## Activate the SSH
+Verify that the `~/.ssh/` dir has the right permission level: 
+```bash
+stat -c %a ~/.ssh/
+```
+It should have the value: **700**
+*Source: https://askubuntu.com/questions/144921/how-to-get-chmod-octal-permissions-of-the-folder-in-the-terminal*
+
 Make sure your key access (permission): 
 ```bash
 chmod 400 ~/.ssh/id_*
