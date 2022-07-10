@@ -48,6 +48,7 @@ Verify that the `~/.ssh/` dir has the right permission level:
 stat -c %a ~/.ssh/
 ```
 It should have the value: **700**
+
 *Source: https://askubuntu.com/questions/144921/how-to-get-chmod-octal-permissions-of-the-folder-in-the-terminal*
 
 Make sure your key access (permission): 
