@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
-echo " > Create Kali template"
-qvm-create --class TemplateVM --template debian-11 --property label=purple kali-debian-11
-qvm-create --class StandaloneVM --template debian-11 --property label=orange Dev
+echo " > Copy scripts and other files to the dom0"
+for fileName in ./dom0/*.sh
+do
+    qvm-run --pass-io <src-vm> 'cat /path/to/file_in_src_domain' > ~/Downloads/
+    qvm-run --pass-io <src-vm> 'cat /path/to/file_in_src_domain' > ~/Downloads/
+done
