@@ -8,6 +8,8 @@ basic:
 	sudo apt update
 	sudo apt upgrade -y
 	sudo apt install -y \
+		wget \
+		curl \
 		git \
 		vim \
 		htop
@@ -17,6 +19,7 @@ kali:
 	echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
 	gpg --import kali-pub.asc
 	gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
+	sudo apt update
 
 .PHONY: dev
 dev:
