@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=IntelliJ IDEA
+Comment=Code Editing for Java.
+GenericName=Text Editor
+Exec=/home/jn/.local/bin/idea %F
+Icon=/home/jn/.local/lib/idea-IC-221.5080.210/bin/idea.png
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;application/java-archive;
+Keywords=idea;
