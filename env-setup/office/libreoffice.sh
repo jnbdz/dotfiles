@@ -2,7 +2,7 @@
 
 installLibreOffice() {
     echo " > Install LibreOffice"
-    sudo apt install -y libreoffice
+    sudo apt-get install -y libreoffice
 }
 
 uninstallLibreOffice() {
