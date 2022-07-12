@@ -3,6 +3,19 @@ SHELL := BASH
 .PHONY: all
 all: rootdotfiles local config gnupg projects tutorials
 
+.PHONY: basic
+	sudo apt update
+	sudo apt upgrade -y
+	sudo apt install -y \
+		git \
+		vim \
+		htop
+
+.PHONY: kali
+	echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
+	gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
+
+
 .PHONY: rootdotfiles
 rootdotfiles:
 	ln -snf $(CURDIR)/.zshrc $(HOME)/.zshrc;
