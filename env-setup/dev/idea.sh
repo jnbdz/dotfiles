@@ -6,6 +6,8 @@ installIdea() {
     echo " > Download & install of IntelliJ IDEA version "${ideaVersion}
     wget -c https://download.jetbrains.com/idea/ideaIC-${ideaVersion}.tar.gz -P ~/Downloads/
     tar -xvf ~/Downloads/ideaIC-${ideaVersion}.tar.gz -C ~/.local/lib/
+    mkdir -p ~/.local/share/applications/
+    cp ./.local/share/applications/idea.desktop ~/.local/share/applications/
 }
 
 removeIdeaTar() {
@@ -16,4 +18,5 @@ removeIdeaTar() {
 uninstallIdea() {
     echo " > Uninstall IntelliJ IDEA"
     rm -rf ~/.local/lib/ideaIC-${ideaVersion}
+    rm  ~/.local/share/applications/idea.desktop
 }
