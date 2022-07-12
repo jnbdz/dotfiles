@@ -4,6 +4,7 @@ SHELL := BASH
 all: rootdotfiles local config gnupg projects tutorials
 
 .PHONY: basic
+basic:
 	sudo apt update
 	sudo apt upgrade -y
 	sudo apt install -y \
@@ -12,15 +13,48 @@ all: rootdotfiles local config gnupg projects tutorials
 		htop
 
 .PHONY: kali
+kali:
 	echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
 	gpg --import kali-pub.asc
 	gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
 
+.PHONY: dev
+dev:
+	sudo apt install -y \
+		podman
+	mkdir -p $(HOME)/Projects/Personal/Quickstarts
+	mkdir -p $(HOME)/Projects/Other
+
+.PHONY: android-studio
+android-studio:
+	sudo apt install -y \
+		libc6:i386 \
+		libncurses5:i386 \
+		libstdc++6:i386 \
+		lib32z1 \
+		libbz2-1.0:i386
+	wget -c https://redirector.gvt1.com/edgedl/android/studio/ide-zips/${androidStudioVersion}/android-studio-${androidStudioVersion}-linux.tar.gz -P ~/Downloads/
+	tar -xvf ~/Downloads/android-studio-${androidStudioVersion}-linux.tar.gz -C ~/.local/lib/
+	mkdir -p ~/.local/share/applications/
+	cp ./.local/share/applications/android-studio.desktop ~/.local/share/applications/
+
+.PHONY: sre
+sre:
+	sudo apt install -y \
+		kali-tools-reverse-engineering \
+		ghidra \
+		ghidra-data \
+		ghidra-dbgsym
 
 .PHONY: rootdotfiles
 rootdotfiles:
 	ln -snf $(CURDIR)/.zshrc $(HOME)/.zshrc;
 	ln -snf $(CURDIR)/.vimrc $(HOME)/.vimrc;
+
+.PHONY: ssh
+ssh:
+	mkdir -p ~/.ssh
+	chmod 700 ~/.ssh
 
 .PHONY: local
 local:
@@ -34,11 +68,6 @@ config:
 .PHONY: gnupg
 gnupg:
 	mkdir -p $(HOME)/.gnupg
-
-.PHONY: projects
-projects:
-	mkdir -p $(HOME)/Projects/Personal
-	mkdir -p $(HOME)/Projects/Other;
 
 .PHONY: tutorials
 tutorials:
