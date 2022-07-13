@@ -176,11 +176,146 @@ uninstall-iphone:
 
 .PHONY: office
 office:
-	sudo apt-get install -y libreoffice
+	sudo apt-get install -y \
+		libreoffice \
+		asciidoc \
+		asciidoc-base \
+		zathura \
+		atril \
+		atril-common \
+		pandoc
 
 .PHONY: uninstall-office
 uninstall-office:
-	sudo apt purge -y libreoffice
+	sudo apt purge -y \
+		libreoffice \
+		asciidoc \
+		asciidoc-base \
+		zathura \
+		atril \
+		atril-common \
+		pandoc
+
+.PHONY: graphics
+graphics:
+	sudo apt install -y \
+		gimp \
+		inkscape \
+		imagemagick
+
+.PHONY: uninstall-graphics
+uninstall-graphics:
+	sudo apt remove -y \
+		gimp \
+		inkscape \
+		imagemagick
+
+.PHONY: multimedia
+multimedia: gstreamer gpac vlc mpv parole handbrake
+
+.PHONY: gstreamer
+gstreamer:
+	sudo apt install -y \
+		libgstreamer1.0-dev \
+		libgstreamer-plugins-base1.0-dev \
+		libgstreamer-plugins-bad1.0-dev \
+		gstreamer1.0-plugins-base \
+		gstreamer1.0-plugins-good \
+		gstreamer1.0-plugins-bad \
+		gstreamer1.0-plugins-ugly \
+		gstreamer1.0-libav \
+		gstreamer1.0-tools \
+		gstreamer1.0-x \
+		gstreamer1.0-alsa \
+		gstreamer1.0-gl \
+		gstreamer1.0-gtk3 \
+		gstreamer1.0-qt5 \
+		gstreamer1.0-pulseaudio
+
+.PHONY: uninstall-gstreamer 
+uninstall-gstreamer:
+	sudo apt remove -y \
+		libgstreamer1.0-dev \
+		libgstreamer-plugins-base1.0-dev \
+		libgstreamer-plugins-bad1.0-dev \
+		gstreamer1.0-plugins-base \
+		gstreamer1.0-plugins-good \
+		gstreamer1.0-plugins-bad \
+		gstreamer1.0-plugins-ugly \
+		gstreamer1.0-libav \
+		gstreamer1.0-tools \
+		gstreamer1.0-x \
+		gstreamer1.0-alsa \
+		gstreamer1.0-gl \
+		gstreamer1.0-gtk3 \
+		gstreamer1.0-qt5 \
+		gstreamer1.0-pulseaudio
+
+.PHONY: gpac
+gpac:
+	sudo apt install -y gpac
+
+.PHONY: unintall-gpac
+uninstall-gpac:
+	sudo apt remove -y gpac
+
+.PHONY: vlc
+vlc:
+	sudo apt install -y \
+		vlc \
+		xine \
+		mplayer \
+		libdvdread3
+
+.PHONY: uninstall-vlc
+uninstall-vlc:
+	sudo apt remove -y \
+		vlc \
+		xine \
+		mplayer \
+		libdvdread3
+
+.PHONY: mpv
+mpv:
+	sudo apt install -y \
+		mpv
+
+.PHONY: uninstall-mpv
+uninstall-mpv:
+	sudo apt remove -y \
+		mpv
+
+.PHONY: parole
+parole:
+	sudo apt install -y \
+		parole
+
+.PHONY: uninstall-parole
+uninstall-parole:
+	sudo apt remove -y \
+		parole
+
+.PHONY: handbrake
+handbrake:
+	sudo apt install -y \
+		handbrake \
+		handbrake-cli
+
+.PHONY: uninstall-handbrake
+uninstall-handbrake:
+	sudo apt remove -y \
+		handbrake \
+		handbrake-cli
+
+.PHONY: youtube-dl
+youtube-dl:
+	sudo apt install -y \
+		youtube-dl
+
+.PHONY: uninstall-youtube-dl
+uninstall-youtube-dl:
+	sudo apt remove -y \
+		youtube-dl
 
 .PHONY: help
 help:
