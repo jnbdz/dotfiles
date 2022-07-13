@@ -40,6 +40,38 @@ android-studio:
 	tar -xvf ~/Downloads/android-studio-${androidStudioVersion}-linux.tar.gz -C ~/.local/lib/
 	mkdir -p ~/.local/share/applications/
 	cp ./.local/share/applications/android-studio.desktop ~/.local/share/applications/
+	rm ~/Downloads/android-studio-${androidStudioVersion}-linux.tar.gz
+
+.PHONY: uninstall-android-studio
+uninstall-android-studio:
+	rm -rf ~/.local/lib/android-studio-${androidStudioVersion}-linux
+	rm  ~/.local/share/applications/android-studio.desktop
+
+.PHONY: idea
+idea:
+	wget -c https://download.jetbrains.com/idea/ideaIC-${ideaVersion}.tar.gz -P ~/Downloads/
+	tar -xvf ~/Downloads/ideaIC-${ideaVersion}.tar.gz -C ~/.local/lib/
+	mkdir -p ~/.local/share/applications/
+	cp ./.local/share/applications/idea.desktop ~/.local/share/applications/
+	rm ~/Downloads/ideaIC-${ideaVersion}.tar.gz
+
+.PHONY: uninstall-idea
+uninstall-idea:
+	rm -rf ~/.local/lib/ideaIC-${ideaVersion}
+	rm  ~/.local/share/applications/idea.desktop
+
+.PHONY: pycharm
+pycharm:
+	wget -c https://download.jetbrains.com/python/pycharm-community-${pycharmVersion}.tar.gz -P ~/Downloads/
+	tar -xvf ~/Downloads/pycharm-community-${pycharmVersion}.tar.gz -C ~/.local/lib/
+	mkdir -p ~/.local/share/applications/
+	cp ./.local/share/applications/pycharm.desktop ~/.local/share/applications/
+	rm ~/Downloads/pycharm-community-${pycharmVersion}.tar.gz
+
+.PHONY: uninstall-pycharm
+uninstall-pycharm:
+	rm -rf ~/.local/lib/pycharm-community-${pycharmVersion}
+	rm  ~/.local/share/applications/pycharm.desktop
 
 .PHONY: sre
 sre:
