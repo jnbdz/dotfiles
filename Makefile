@@ -16,10 +16,24 @@ basic:
 
 .PHONY: kali
 kali:
-	echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
+	sudo cp /etc/apt/sources.list /etc/apt/sources.list.bck
+	echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 	gpg --import kali-pub.asc
 	gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
 	sudo apt update
+	sudo apt install -y \
+		kali-archive-keyring
+
+.PHONY: pathpicker
+pathpicker:
+	git clone https://github.com/facebook/PathPicker.git	
+	~/Downloads/PathPicker/debian/package.sh
+	dpkg -i ~/Downloads/PathPicker/PathPicker/fpp_0.7.2_noarch.deb
+	rm -rf ~/Downloads/PathPicker
+
+.PHONY: uninstall-pathpicker
+uninstall-pathpicker:
+	sudo apt-get remove fpp
 
 .PHONY: dev
 dev:
@@ -143,6 +157,30 @@ gnupg:
 .PHONY: tutorials
 tutorials:
 	mkdir -p $(HOME)/Tutorials
+
+.PHONY: iphone
+iphone:
+	sudo apt install -y \
+		ifuse \
+		usbmuxd \
+		libimobiledevice6 \
+		libimobiledevice-utils
+
+.PHONY: uninstall-iphone
+uninstall-iphone:
+	sudo apt remove -y \
+		ifuse \
+		usbmuxd \
+		libimobiledevice6 \
+		libimobiledevice-utils
+
+.PHONY: office
+office:
+	sudo apt-get install -y libreoffice
+
+.PHONY: uninstall-office
+uninstall-office:
+	sudo apt purge -y libreoffice
 
 .PHONY: help
 help:
