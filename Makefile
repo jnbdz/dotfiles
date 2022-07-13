@@ -28,6 +28,12 @@ dev:
 	mkdir -p $(HOME)/Projects/Personal/Quickstarts
 	mkdir -p $(HOME)/Projects/Other
 
+.PHONY: all-ide
+all-ide: android-studio idea pycharms rstudio code
+
+.PHONY: uninstall-all-ide
+uninstall-all-ide: uninstall-android-studio uninstall-idea uninstall-pycharm uninstall-rstudio uninstall-code
+
 .PHONY: android-studio
 android-studio:
 	sudo apt install -y \
