@@ -30,10 +30,15 @@ basic:
 	ln -snf $(CURDIR)/.vimrc $(HOME)/.vimrc;
 	mkdir -p ~/.ssh
 	chmod 700 ~/.ssh
-	mkdir -p $(HOME)/.local
-	mkdir -p $(HOME)/.local/share;
+	mkdir -p $(HOME)/.local/bin
+	mkdir -p $(HOME)/.local/share
 	mkdir -p $(HOME)/.config
 	mkdir -p $(HOME)/.gnupg
+	ln -snf $(CURDIR)/untar $(HOME)/.local/bin/untar
+	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".*.swp"); do \
+		f=$$(basename $$file); \
+		ln -sfn $$file $(HOME)/.local/bin/statusbar/$$f; \
+	done; \
 	git clone https://github.com/facebook/PathPicker.git	
 	~/Downloads/PathPicker/debian/package.sh
 	dpkg -i ~/Downloads/PathPicker/PathPicker/fpp_0.7.2_noarch.deb
@@ -64,6 +69,10 @@ dev:
 	wget -c https://dl.pstmn.io/download/latest/linux64 -P ~/Downloads
 	tar -xvf ~/Download/linux64 -C ~/.local/lib/
 	rm ~/Downloads/linux64
+	for file in $(shell find $(CURDIR)/.local/bin/ -name ".*" -not -name ".gitignore" -not -name ".*.swp" -not -name "statusbar" -not -name "untar"); do \
+		f=$$(basename $$file); \
+		ln -sfn $(CURDIR)/.local/bin/$$file $(HOME)/.local/bin/$$f; \
+	done; \
 	mkdir -p $(HOME)/Projects/Personal/Quickstarts
 	mkdir -p $(HOME)/Projects/Other
 	mkdir -p $(HOME)/Tutorials
