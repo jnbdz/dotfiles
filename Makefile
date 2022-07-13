@@ -1,7 +1,7 @@
 SHELL := BASH
 
 .PHONY: all
-all: rootdotfiles local config gnupg projects tutorials
+all: dotfiles local config gnupg projects tutorials
 
 .PHONY: basic
 basic:
@@ -41,6 +41,7 @@ dev:
 		podman
 	mkdir -p $(HOME)/Projects/Personal/Quickstarts
 	mkdir -p $(HOME)/Projects/Other
+	mkdir -p $(HOME)/Tutorials
 
 .PHONY: all-ide
 all-ide: android-studio idea pycharms rstudio code
@@ -131,32 +132,16 @@ sre:
 		ghidra-data \
 		ghidra-dbgsym
 
-.PHONY: rootdotfiles
-rootdotfiles:
+.PHONY: dotfiles
+dotfiles:
 	ln -snf $(CURDIR)/.zshrc $(HOME)/.zshrc;
 	ln -snf $(CURDIR)/.vimrc $(HOME)/.vimrc;
-
-.PHONY: ssh
-ssh:
 	mkdir -p ~/.ssh
 	chmod 700 ~/.ssh
-
-.PHONY: local
-local:
 	mkdir -p $(HOME)/.local
 	mkdir -p $(HOME)/.local/share;
-
-.PHONY: config
-config:
 	mkdir -p $(HOME)/.config
-
-.PHONY: gnupg
-gnupg:
 	mkdir -p $(HOME)/.gnupg
-
-.PHONY: tutorials
-tutorials:
-	mkdir -p $(HOME)/Tutorials
 
 .PHONY: iphone
 iphone:
