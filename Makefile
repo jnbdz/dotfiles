@@ -211,7 +211,7 @@ uninstall-graphics:
 		imagemagick
 
 .PHONY: multimedia
-multimedia: gstreamer gpac vlc mpv parole handbrake
+multimedia: gstreamer gpac vlc mpv parole handbrake ffmpeg youtube-dl
 
 .PHONY: gstreamer
 gstreamer:
@@ -306,6 +306,16 @@ uninstall-handbrake:
 	sudo apt remove -y \
 		handbrake \
 		handbrake-cli
+
+.PHONY: ffmpeg
+ffmpeg:
+	sudo apt install -y \
+		ffmpeg
+
+.PHONY: uninstall-ffmpeg
+uninstall-ffmpeg:
+	sudo apt remove -y \
+		ffmpeg
 
 .PHONY: youtube-dl
 youtube-dl:
