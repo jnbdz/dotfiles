@@ -73,6 +73,26 @@ uninstall-pycharm:
 	rm -rf ~/.local/lib/pycharm-community-${pycharmVersion}
 	rm  ~/.local/share/applications/pycharm.desktop
 
+.PHONY: rstudio
+rstudio:
+	wget -c https://download1.rstudio.org/desktop/bionic/amd64/rstudio-${rStudioVersion}-amd64.deb -P ~/Downloads/
+	dpkg -i ~/Downloads/rstudio-${rStudioVersion}_amd64.deb
+	rm ~/Downloads/rstudio-${rStudioVersion}_amd64.deb
+
+.PHONY: uninstall-rstudio
+uninstall-rstudio:
+	sudo apt-get remove rstudio
+
+.PHONY: code
+code:
+	wget -c https://az764295.vo.msecnd.net/stable/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/code_${vsCodeVersion}_amd64.deb -P ~/Downloads/
+	dpkg -i ~/Downloads/code_${vsCodeVersion}_amd64.deb
+	rm ~/Downloads/code_${vsCodeVersion}_amd64.deb
+
+.PHONY: uninstall-code
+uninstall-code:
+	sudo apt-get remove code
+
 .PHONY: sre
 sre:
 	sudo apt install -y \
