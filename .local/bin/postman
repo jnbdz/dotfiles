@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+postman() {
+    ~/.local/lib/Postman/postman
+}
+postman
+
+exit 0
