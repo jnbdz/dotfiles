@@ -99,6 +99,16 @@ code:
 uninstall-code:
 	sudo apt-get remove code
 
+.PHONY: postman
+postman:
+	wget -c https://dl.pstmn.io/download/latest/linux64 -P ~/Downloads
+	tar -xvf ~/Download/linux64 -C ~/.local/lib/
+	rm ~/Downloads/linux64
+
+.PHONY: uninstall-postman
+uninstall-postman:
+	~/.local/lib/Postman
+
 .PHONY: sre
 sre:
 	sudo apt install -y \
