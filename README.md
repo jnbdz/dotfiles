@@ -1,6 +1,16 @@
 # dotfiles
 My dotfiles. At your own risk 🥴
 
+## Install
+```bash
+cd ~
+wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip
+unzip main.zip
+mv dotfiles-main dotfiles
+cd dotfiles
+sudo apt install -y make
+```
+
 ## Changing `/etc/apt/sources.list` in Debian to use Kali pkg source
 Enabling the **kali-rolling** branch is done with the command:
 ```
