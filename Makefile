@@ -14,7 +14,7 @@ all: basic dev multimedia office
 basic:
 	sudo apt update
 	sudo cp /etc/apt/sources.list /etc/apt/sources.list.bck
-	echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
+	echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
 	gpg --import kali-pub.asc
 	gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
 	sudo apt update
@@ -73,7 +73,10 @@ dev:
 		gstreamer1.0-gl \
 		gstreamer1.0-gtk3 \
 		gstreamer1.0-qt5 \
-		gstreamer1.0-pulseaudio
+		gstreamer1.0-pulseaudio \
+		selinux-basics \
+		selinux-policy-default \
+		auditd
 	wget -c https://az764295.vo.msecnd.net/stable/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/code_$(vsCodeVersion)_amd64.deb -P ~/Downloads/
 	dpkg -i ~/Downloads/code_$(vsCodeVersion)_amd64.deb
 	rm ~/Downloads/code_$(vsCodeVersion)_amd64.deb
