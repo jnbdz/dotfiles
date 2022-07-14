@@ -130,8 +130,4 @@ alias prikey="more ~/.ssh/id_ed25519 | xclip -selection primary | echo '=> Priva
 
 # Screenshot
 # Source: https://wiki.debian.org/ScreenShots
-capt() {
-	echo $1
-	#sleep $1 && \
-	#xwd -root | xwdtopnm | pnmtopng > capture.png
-}
+alias capture="xwd -root | xwdtopnm | pnmtopng > capture.png"
