@@ -25,6 +25,9 @@ basic:
 		git \
 		vim \
 		htop \
+		zsh \
+		xclip \
+		x11-apps \
 		kali-archive-keyring
 	ln -snf $(CURDIR)/.zshrc $(HOME)/.zshrc;
 	ln -snf $(CURDIR)/.vimrc $(HOME)/.vimrc;
