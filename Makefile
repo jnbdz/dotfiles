@@ -36,11 +36,19 @@ basic:
 	mkdir -p $(HOME)/.local/bin
 	mkdir -p $(HOME)/.local/share
 	mkdir -p $(HOME)/.config
+	ln -snf $(CURDIR)/.config/containers $(HOME)/.config/containers
+	ln -snf $(CURDIR)/.config/shell $(HOME)/.config/shell
+	ln -snf $(CURDIR)/.config/zsh $(HOME)/.config/zsh
 	mkdir -p $(HOME)/.gnupg
-	ln -snf $(CURDIR)/untar $(HOME)/.local/bin/untar
+	ln -snf $(CURDIR)/.local/bin/untar $(HOME)/.local/bin/untar
+	ln -snf $(CURDIR)/.local/share/emoji $(HOME)/.local/share/emoji
 	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".*.swp"); do \
 		f=$$(basename $$file); \
-		ln -sfn $$file $(HOME)/.local/bin/statusbar/$$f; \
+		ln -sfn $(CURDIR)/.local/share/helpdocs/$$file $(HOME)/.local/share/helpdocs/$$f; \
+	done; \
+	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".*.swp"); do \
+		f=$$(basename $$file); \
+		ln -sfn $(CURDIR)/.local/bin/statusbar/$$file $(HOME)/.local/bin/statusbar/$$f; \
 	done; \
 	git clone https://github.com/facebook/PathPicker.git	
 	~/Downloads/PathPicker/debian/package.sh
