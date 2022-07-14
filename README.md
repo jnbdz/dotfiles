@@ -11,6 +11,11 @@ cd dotfiles
 sudo apt install -y make
 ```
 
+After adding the SSH keys to the `~/.ssh/` directory you need to load ssh: 
+```bash
+eval "$(ssh-agent -s)"
+```
+
 ## Changing `/etc/apt/sources.list` in Debian to use Kali pkg source
 Enabling the **kali-rolling** branch is done with the command:
 ```
