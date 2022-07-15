@@ -153,7 +153,7 @@ uninstall-pycharm:
 .PHONY: rstudio
 rstudio:
 	wget -c https://download1.rstudio.org/desktop/bionic/amd64/rstudio-$(rStudioVersion)-amd64.deb -P ~/Downloads/
-	dpkg -i ~/Downloads/rstudio-$(rStudioVersion)_amd64.deb
+	sudo dpkg -i ~/Downloads/rstudio-$(rStudioVersion)_amd64.deb
 	rm ~/Downloads/rstudio-$(rStudioVersion)_amd64.deb
 
 .PHONY: uninstall-postman
