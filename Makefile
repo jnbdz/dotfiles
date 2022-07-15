@@ -15,9 +15,10 @@ basic:
 	echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
 	gpg --import kali-pub.asc
 	gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
-	sudo apt update
-	sudo apt upgrade -y
-	sudo apt install -y \
+	export DEBIAN_FRONTEND=noninteractive
+	sudo apt-get update --fix-missing
+	sudo apt-get install -y \
+		libwacom-common \
 		wget \
 		curl \
 		git \
@@ -27,6 +28,9 @@ basic:
 		xclip \
 		x11-apps \
 		kali-archive-keyring
+	sudo apt-get upgrade -y
+	sudo apt-get update --fix-missing
+	sudo apt-get upgrade -y
 	ln -snf $(CURDIR)/.zshrc $(HOME)/.zshrc;
 	ln -snf $(CURDIR)/.vimrc $(HOME)/.vimrc;
 	mkdir -p ~/.ssh
