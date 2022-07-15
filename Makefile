@@ -1,5 +1,3 @@
-SHELL := BASH
-
 # Dev
 androidStudioVersion = 2021.2.1.15
 ideaVersion = 2022.1.3
@@ -8,7 +6,7 @@ rStudioVersion = 2022.07.0-548
 vsCodeVersion = 1.69.0-1657183742
 
 .PHONY: all
-all: basic dev multimedia office
+all: basic dev all-ide multimedia office sre iphone
 
 .PHONY: basic
 basic:
