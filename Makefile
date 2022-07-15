@@ -51,8 +51,10 @@ basic:
 	mv $(CURDIR)/PathPicker $(HOME)/.local/lib/PathPicker
 	chmod +x $(HOME)/.local/lib/PathPicker/fpp
 	ln -snf $(HOME)/.local/lib/PathPicker/fpp $(HOME)/.local/bin/fpp
-	echo "\nexport PATH=$$PATH:$(HOME)/.local/bin/" >> $(HOME)/.bashrc
-	echo "\n. $(HOME)/.config/shell/aliasrc"
+	echo "\n# ZSH terminal" >> $(HOME)/.bashrc
+	echo "zsh" >> $(HOME)/.bashrc
+	echo "export PATH=$$PATH:$(HOME)/.local/bin/" >> $(HOME)/.bashrc
+	echo ". $(HOME)/.config/shell/aliasrc" >> $(HOME)/.bashrc
 
 .PHONY: dev
 dev:
