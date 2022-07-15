@@ -3,7 +3,7 @@ My dotfiles. At your own risk 🥴
 
 ## Install
 ```bash
-cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make
+cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic
 ```
 OR
 ```bash
@@ -14,6 +14,7 @@ mv dotfiles-main dotfiles
 rm main.zip
 cd dotfiles
 sudo apt install -y make
+make basic
 ```
 
 After adding the SSH keys to the `~/.ssh/` directory you need to load ssh: 
