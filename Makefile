@@ -52,6 +52,7 @@ basic:
 	chmod +x $(HOME)/.local/lib/PathPicker/fpp
 	ln -snf $(HOME)/.local/lib/PathPicker/fpp $(HOME)/.local/bin/fpp
 	echo "\nexport PATH=$$PATH:$(HOME)/.local/bin/" >> $(HOME)/.bashrc
+	echo "\n. $(HOME)/.config/shell/aliasrc"
 
 .PHONY: dev
 dev:
