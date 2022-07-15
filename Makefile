@@ -77,10 +77,7 @@ dev:
 		gstreamer1.0-gl \
 		gstreamer1.0-gtk3 \
 		gstreamer1.0-qt5 \
-		gstreamer1.0-pulseaudio \
-		selinux-basics \
-		selinux-policy-default \
-		auditd
+		gstreamer1.0-pulseaudio
 	wget -c https://az764295.vo.msecnd.net/stable/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/code_$(vsCodeVersion)_amd64.deb -P ~/Downloads/
 	dpkg -i $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
 	rm $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
@@ -94,6 +91,13 @@ dev:
 	mkdir -p $(HOME)/Projects/Personal/Quickstarts
 	mkdir -p $(HOME)/Projects/Other
 	mkdir -p $(HOME)/Tutorials
+
+.PHONY: selinux
+selinux:
+	sudo apt-get install -y \
+		selinux-basics \
+		selinux-policy-default \
+		auditd
 
 .PHONY: all-ide
 all-ide: android-studio idea pycharms rstudio
