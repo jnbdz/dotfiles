@@ -34,6 +34,7 @@ basic:
 	mkdir -p ~/.ssh
 	chmod 700 ~/.ssh
 	mkdir -p $(HOME)/.local/bin
+	mkdir -p $(HOME)/.local/lib
 	mkdir -p $(HOME)/.local/share
 	mkdir -p $(HOME)/.config
 	ln -snf $(CURDIR)/.config/containers $(HOME)/.config/containers
@@ -44,9 +45,10 @@ basic:
 	ln -snf $(CURDIR)/.local/share/helpdocs/ $(HOME)/.local/share/helpdocs
 	ln -snf $(CURDIR)/.local/bin/statusbar/ $(HOME)/.local/bin/statusbar
 	git clone https://github.com/facebook/PathPicker.git
-	~/Downloads/PathPicker/debian/package.sh
-	dpkg -i ~/Downloads/PathPicker/PathPicker/fpp_0.7.2_noarch.deb
-	rm -rf ~/Downloads/PathPicker
+	mv $(CURDIR)/PathPicker $(HOME)/.local/lib/PathPicker
+	chmod +x $(HOME)/.local/lib/PathPicker/fpp
+	ln -snf $(HOME)/.local/lib/PathPicker/fpp $(HOME)/.local/bin/fpp
+	echo "\nexport PATH=$$PATH:$(HOME)/.local/bin/" >> $(HOME)/.bashrc
 
 .PHONY: dev
 dev:
