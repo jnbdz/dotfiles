@@ -19,6 +19,7 @@ basic:
 	sudo apt-get update --fix-missing
 	sudo apt-get install -y \
 		libwacom-common \
+		libsemanage-common \
 		wget \
 		curl \
 		git \
