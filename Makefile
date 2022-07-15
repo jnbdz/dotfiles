@@ -108,11 +108,11 @@ uninstall-all-ide: uninstall-android-studio uninstall-idea uninstall-pycharm
 .PHONY: android-studio
 android-studio:
 	sudo apt install -y \
-		libc6:i386 \
-		libncurses5:i386 \
-		libstdc++6:i386 \
+		libc6 \
+		libncurses5 \
+		libstdc++6 \
 		lib32z1 \
-		libbz2-1.0:i386
+		libbz2-1.0
 	wget -c https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$(androidStudioVersion)/android-studio-$(androidStudioVersion)-linux.tar.gz -P ~/Downloads/
 	tar -xvf ~/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz -C ~/.local/lib/
 	mkdir -p ~/.local/share/applications/
