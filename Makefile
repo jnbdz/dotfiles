@@ -39,18 +39,11 @@ basic:
 	ln -snf $(CURDIR)/.config/containers $(HOME)/.config/containers
 	ln -snf $(CURDIR)/.config/shell $(HOME)/.config/shell
 	ln -snf $(CURDIR)/.config/zsh $(HOME)/.config/zsh
-	mkdir -p $(HOME)/.gnupg
 	ln -snf $(CURDIR)/.local/bin/untar $(HOME)/.local/bin/untar
 	ln -snf $(CURDIR)/.local/share/emoji $(HOME)/.local/share/emoji
-	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".*.swp"); do \
-		f=$$(basename $$file); \
-		ln -sfn $(CURDIR)/.local/share/helpdocs/$$file $(HOME)/.local/share/helpdocs/$$f; \
-	done; \
-	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".*.swp"); do \
-		f=$$(basename $$file); \
-		ln -sfn $(CURDIR)/.local/bin/statusbar/$$file $(HOME)/.local/bin/statusbar/$$f; \
-	done; \
-	git clone https://github.com/facebook/PathPicker.git	
+	ln -snf $(CURDIR)/.local/share/helpdocs/ $(HOME)/.local/share/helpdocs
+	ln -snf $(CURDIR)/.local/bin/statusbar/ $(HOME)/.local/bin/statusbar
+	git clone https://github.com/facebook/PathPicker.git
 	~/Downloads/PathPicker/debian/package.sh
 	dpkg -i ~/Downloads/PathPicker/PathPicker/fpp_0.7.2_noarch.deb
 	rm -rf ~/Downloads/PathPicker
