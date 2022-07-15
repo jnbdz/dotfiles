@@ -82,7 +82,7 @@ dev:
 	sudo dpkg -i $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
 	rm $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
 	wget -c https://dl.pstmn.io/download/latest/linux64 -P $(HOME)/Downloads
-	tar -xvf $(HOME)/Download/linux64 -C $(HOME)/.local/lib/
+	tar -xvf $(HOME)/Downloads/linux64 -C $(HOME)/.local/lib/
 	rm $(HOME)/Downloads/linux64
 	for file in $(shell find $(CURDIR)/.local/bin/ -name ".*" -not -name ".gitignore" -not -name ".*.swp" -not -name "statusbar" -not -name "untar"); do \
 		f=$$(basename $$file); \
