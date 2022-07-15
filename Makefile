@@ -79,7 +79,7 @@ dev:
 		gstreamer1.0-qt5 \
 		gstreamer1.0-pulseaudio
 	wget -c https://az764295.vo.msecnd.net/stable/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/code_$(vsCodeVersion)_amd64.deb -P ~/Downloads/
-	dpkg -i $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
+	sudo dpkg -i $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
 	rm $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
 	wget -c https://dl.pstmn.io/download/latest/linux64 -P $(HOME)/Downloads
 	tar -xvf $(HOME)/Download/linux64 -C $(HOME)/.local/lib/
