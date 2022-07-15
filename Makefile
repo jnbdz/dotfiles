@@ -10,7 +10,7 @@ all: basic dev all-ide multimedia office sre iphone
 
 .PHONY: basic
 basic:
-	sudo apt update
+	sudo apt-get update
 	sudo cp /etc/apt/sources.list /etc/apt/sources.list.bck
 	echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
 	gpg --import kali-pub.asc
@@ -20,6 +20,7 @@ basic:
 	sudo apt-get install -y \
 		libwacom-common \
 		libsemanage-common \
+		libegl-mesa0 \
 		wget \
 		curl \
 		git \
@@ -58,7 +59,9 @@ basic:
 
 .PHONY: dev
 dev:
-	sudo apt install -y \
+	export DEBIAN_FRONTEND=noninteractive
+	sudo apt-get update \
+	sudo apt-get install -y \
 		podman \
 		libgstreamer1.0-dev \
 		libgstreamer-plugins-base1.0-dev \
@@ -79,11 +82,11 @@ dev:
 		selinux-policy-default \
 		auditd
 	wget -c https://az764295.vo.msecnd.net/stable/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/code_$(vsCodeVersion)_amd64.deb -P ~/Downloads/
-	dpkg -i ~/Downloads/code_$(vsCodeVersion)_amd64.deb
-	rm ~/Downloads/code_$(vsCodeVersion)_amd64.deb
-	wget -c https://dl.pstmn.io/download/latest/linux64 -P ~/Downloads
-	tar -xvf ~/Download/linux64 -C ~/.local/lib/
-	rm ~/Downloads/linux64
+	dpkg -i $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
+	rm $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
+	wget -c https://dl.pstmn.io/download/latest/linux64 -P $(HOME)/Downloads
+	tar -xvf $(HOME)/Download/linux64 -C $(HOME)/.local/lib/
+	rm $(HOME)/Downloads/linux64
 	for file in $(shell find $(CURDIR)/.local/bin/ -name ".*" -not -name ".gitignore" -not -name ".*.swp" -not -name "statusbar" -not -name "untar"); do \
 		f=$$(basename $$file); \
 		ln -sfn $(CURDIR)/.local/bin/$$file $(HOME)/.local/bin/$$f; \
