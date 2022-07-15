@@ -113,16 +113,16 @@ android-studio:
 		libstdc++6 \
 		lib32z1 \
 		libbz2-1.0
-	wget -c https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$(androidStudioVersion)/android-studio-$(androidStudioVersion)-linux.tar.gz -P ~/Downloads/
-	tar -xvf ~/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz -C ~/.local/lib/
-	mkdir -p ~/.local/share/applications/
-	cp $(CURDIR)/.local/share/applications/android-studio.desktop ~/.local/share/applications/
-	rm ~/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz
+	wget -c https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$(androidStudioVersion)/android-studio-$(androidStudioVersion)-linux.tar.gz -P $(HOME)/Downloads/
+	tar -xvf $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz -C $(HOME)/.local/lib/
+	mkdir -p $(HOME)/.local/share/applications/
+	cp $(CURDIR)/.local/share/applications/android-studio.desktop $(HOME)/.local/share/applications/
+	rm $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz
 
 .PHONY: uninstall-android-studio
 uninstall-android-studio:
-	rm -rf ~/.local/lib/android-studio-$(androidStudioVersion)-linux
-	rm  ~/.local/share/applications/android-studio.desktop
+	rm -rf $(HOME)/.local/lib/android-studio-$(androidStudioVersion)-linux
+	rm  $(HOME)/.local/share/applications/android-studio.desktop
 
 .PHONY: idea
 idea:
