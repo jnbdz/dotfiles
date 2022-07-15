@@ -126,39 +126,39 @@ uninstall-android-studio:
 
 .PHONY: idea
 idea:
-	wget -c https://download.jetbrains.com/idea/ideaIC-$(ideaVersion).tar.gz -P ~/Downloads/
-	tar -xvf ~/Downloads/ideaIC-$(ideaVersion).tar.gz -C ~/.local/lib/
-	mkdir -p ~/.local/share/applications/
-	cp $(CURDIR)/.local/share/applications/idea.desktop ~/.local/share/applications/
-	rm ~/Downloads/ideaIC-$(ideaVersion).tar.gz
+	wget -c https://download.jetbrains.com/idea/ideaIC-$(ideaVersion).tar.gz -P $(HOME)/Downloads/
+	tar -xvf $(HOME)/Downloads/ideaIC-$(ideaVersion).tar.gz -C $(HOME)/.local/lib/
+	mkdir -p $(HOME)/.local/share/applications/
+	cp $(CURDIR)/.local/share/applications/idea.desktop $(HOME)/.local/share/applications/
+	rm $(HOME)/Downloads/ideaIC-$(ideaVersion).tar.gz
 
 .PHONY: uninstall-idea
 uninstall-idea:
-	rm -rf ~/.local/lib/ideaIC-$(ideaVersion)
-	rm  ~/.local/share/applications/idea.desktop
+	rm -rf $(HOME)/.local/lib/ideaIC-$(ideaVersion)
+	rm  $(HOME)/.local/share/applications/idea.desktop
 
 .PHONY: pycharm
 pycharm:
-	wget -c https://download.jetbrains.com/python/pycharm-community-$(pycharmVersion).tar.gz -P ~/Downloads/
-	tar -xvf ~/Downloads/pycharm-community-$(pycharmVersion).tar.gz -C ~/.local/lib/
-	mkdir -p ~/.local/share/applications/
-	cp $(CURDIR)/.local/share/applications/pycharm.desktop ~/.local/share/applications/
-	rm ~/Downloads/pycharm-community-$(pycharmVersion).tar.gz
+	wget -c https://download.jetbrains.com/python/pycharm-community-$(pycharmVersion).tar.gz -P $(HOME)/Downloads/
+	tar -xvf $(HOME)/Downloads/pycharm-community-$(pycharmVersion).tar.gz -C ~/.local/lib/
+	mkdir -p $(HOME)/.local/share/applications/
+	cp $(CURDIR)/.local/share/applications/pycharm.desktop $(HOME)/.local/share/applications/
+	rm $(HOME)/Downloads/pycharm-community-$(pycharmVersion).tar.gz
 
 .PHONY: uninstall-pycharm
 uninstall-pycharm:
-	rm -rf ~/.local/lib/pycharm-community-$(pycharmVersion)
-	rm  ~/.local/share/applications/pycharm.desktop
+	rm -rf $(HOME)/.local/lib/pycharm-community-$(pycharmVersion)
+	rm $(HOME)/.local/share/applications/pycharm.desktop
 
 .PHONY: rstudio
 rstudio:
-	wget -c https://download1.rstudio.org/desktop/bionic/amd64/rstudio-$(rStudioVersion)-amd64.deb -P ~/Downloads/
-	sudo dpkg -i ~/Downloads/rstudio-$(rStudioVersion)_amd64.deb
-	rm ~/Downloads/rstudio-$(rStudioVersion)_amd64.deb
+	wget -c https://download1.rstudio.org/desktop/bionic/amd64/rstudio-$(rStudioVersion)-amd64.deb -P $(HOME)/Downloads/
+	sudo dpkg -i $(HOME)/Downloads/rstudio-$(rStudioVersion)_amd64.deb
+	rm $(HOME)/Downloads/rstudio-$(rStudioVersion)_amd64.deb
 
 .PHONY: uninstall-postman
 uninstall-postman:
-	~/.local/lib/Postman
+	$(HOME)/.local/lib/Postman
 
 .PHONY: sre
 sre:
