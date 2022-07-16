@@ -167,7 +167,8 @@ uninstall-postman:
 
 .PHONY: sre
 sre:
-	sudo apt install -y \
+	sudo apt-get update
+	sudo apt-get install -y \
 		kali-tools-reverse-engineering \
 		ghidra \
 		ghidra-data \
@@ -175,7 +176,8 @@ sre:
 
 .PHONY: iphone
 iphone:
-	sudo apt install -y \
+	sudo apt-get update
+	sudo apt-get install -y \
 		ifuse \
 		usbmuxd \
 		libimobiledevice6 \
@@ -183,7 +185,7 @@ iphone:
 
 .PHONY: uninstall-iphone
 uninstall-iphone:
-	sudo apt remove -y \
+	sudo apt-get remove -y \
 		ifuse \
 		usbmuxd \
 		libimobiledevice6 \
@@ -191,6 +193,7 @@ uninstall-iphone:
 
 .PHONY: office
 office:
+	sudo apt-get update
 	sudo apt-get install -y \
 		libreoffice \
 		asciidoc \
@@ -202,7 +205,7 @@ office:
 
 .PHONY: uninstall-office
 uninstall-office:
-	sudo apt purge -y \
+	sudo apt-get purge -y \
 		libreoffice \
 		asciidoc \
 		asciidoc-base \
@@ -213,21 +216,23 @@ uninstall-office:
 
 .PHONY: graphics
 graphics:
-	sudo apt install -y \
+	sudo apt-get update
+	sudo apt-get install -y \
 		gimp \
 		inkscape \
 		imagemagick
 
 .PHONY: uninstall-graphics
 uninstall-graphics:
-	sudo apt remove -y \
+	sudo apt-get remove -y \
 		gimp \
 		inkscape \
 		imagemagick
 
 .PHONY: multimedia
 multimedia:
-	sudo apt install -y \	
+	sudo apt-get update
+	sudo apt-get install -y \
 		gpac \
 		vlc \
 		xine \
