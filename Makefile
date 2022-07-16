@@ -40,6 +40,7 @@ basic:
 	mkdir -p $(HOME)/.local/bin
 	mkdir -p $(HOME)/.local/lib
 	mkdir -p $(HOME)/.local/share
+	mkdir -p $(HOME)/.local/share/application-icons
 	mkdir -p $(HOME)/.config
 	ln -snf $(CURDIR)/.config/containers $(HOME)/.config/containers
 	ln -snf $(CURDIR)/.config/shell $(HOME)/.config/shell
@@ -112,7 +113,8 @@ android-studio:
 		libncurses5 \
 		libstdc++6 \
 		lib32z1 \
-		libbz2-1.0
+		libbz2-1.0 \
+		libclang-dev
 	wget -c https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$(androidStudioVersion)/android-studio-$(androidStudioVersion)-linux.tar.gz -P $(HOME)/Downloads/
 	tar -xvf $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz -C $(HOME)/.local/lib/
 	mkdir -p $(HOME)/.local/share/applications/
