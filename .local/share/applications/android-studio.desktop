@@ -2,8 +2,8 @@
 Name=Android Studio
 Comment=Code Editing for Android.
 GenericName=Text Editor
-Exec=/home/jn/.local/bin/android-studio %F
-Icon=/home/jn/.local/share/application-icons/studio.png
+Exec=/opt/android-studio/bin/android-studio %F
+Icon=/opt/android-studio/bin/studio.svg
 Type=Application
 StartupNotify=false
 StartupWMClass=Code
