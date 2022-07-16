@@ -40,7 +40,6 @@ basic:
 	mkdir -p $(HOME)/.local/bin
 	mkdir -p $(HOME)/.local/lib
 	mkdir -p $(HOME)/.local/share
-	mkdir -p $(HOME)/.local/share/application-icons
 	mkdir -p $(HOME)/.config
 	ln -snf $(CURDIR)/.config/containers $(HOME)/.config/containers
 	ln -snf $(CURDIR)/.config/shell $(HOME)/.config/shell
@@ -83,7 +82,7 @@ dev:
 	sudo dpkg -i $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
 	rm $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
 	wget -c https://dl.pstmn.io/download/latest/linux64 -P $(HOME)/Downloads
-	tar -xvf $(HOME)/Downloads/linux64 -C $(HOME)/.local/lib/
+	sudo tar -xvf $(HOME)/Downloads/linux64 -C /opt/
 	rm $(HOME)/Downloads/linux64
 	for file in $(shell find $(CURDIR)/.local/bin/ -name ".*" -not -name ".gitignore" -not -name ".*.swp" -not -name "statusbar" -not -name "untar"); do \
 		f=$$(basename $$file); \
@@ -116,40 +115,43 @@ android-studio:
 		libbz2-1.0 \
 		libclang-dev
 	wget -c https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$(androidStudioVersion)/android-studio-$(androidStudioVersion)-linux.tar.gz -P $(HOME)/Downloads/
-	tar -xvf $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz -C $(HOME)/.local/lib/
+	sudo tar -xvf $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz -C /opt/
+	sudo mv /opt/android-studio* /opt/android-studio
 	mkdir -p $(HOME)/.local/share/applications/
 	cp $(CURDIR)/.local/share/applications/android-studio.desktop $(HOME)/.local/share/applications/
 	rm $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz
 
 .PHONY: uninstall-android-studio
 uninstall-android-studio:
-	rm -rf $(HOME)/.local/lib/android-studio-$(androidStudioVersion)-linux
+	sudo rm -rf /opt/android-studio
 	rm  $(HOME)/.local/share/applications/android-studio.desktop
 
 .PHONY: idea
 idea:
 	wget -c https://download.jetbrains.com/idea/ideaIC-$(ideaVersion).tar.gz -P $(HOME)/Downloads/
-	tar -xvf $(HOME)/Downloads/ideaIC-$(ideaVersion).tar.gz -C $(HOME)/.local/lib/
+	sudo tar -xvf $(HOME)/Downloads/ideaIC-$(ideaVersion).tar.gz -C /opt/
+	sudo mv /opt/idea* /opt/idea
 	mkdir -p $(HOME)/.local/share/applications/
 	cp $(CURDIR)/.local/share/applications/idea.desktop $(HOME)/.local/share/applications/
 	rm $(HOME)/Downloads/ideaIC-$(ideaVersion).tar.gz
 
 .PHONY: uninstall-idea
 uninstall-idea:
-	rm -rf $(HOME)/.local/lib/ideaIC-$(ideaVersion)
+	sudo rm -rf /opt/idea
 	rm  $(HOME)/.local/share/applications/idea.desktop
 
 .PHONY: pycharm
 pycharm:
 	wget -c https://download.jetbrains.com/python/pycharm-community-$(pycharmVersion).tar.gz -P $(HOME)/Downloads/
-	tar -xvf $(HOME)/Downloads/pycharm-community-$(pycharmVersion).tar.gz -C ~/.local/lib/
+	sudo tar -xvf $(HOME)/Downloads/pycharm-community-$(pycharmVersion).tar.gz -C /opt/
+	sudo mv /opt/pycharm* /opt/pycharm
 	mkdir -p $(HOME)/.local/share/applications/
 	cp $(CURDIR)/.local/share/applications/pycharm.desktop $(HOME)/.local/share/applications/
 	rm $(HOME)/Downloads/pycharm-community-$(pycharmVersion).tar.gz
 
 .PHONY: uninstall-pycharm
 uninstall-pycharm:
-	rm -rf $(HOME)/.local/lib/pycharm-community-$(pycharmVersion)
+	sudo rm -rf /opt/pycharm
 	rm $(HOME)/.local/share/applications/pycharm.desktop
 
 .PHONY: rstudio
@@ -160,7 +162,7 @@ rstudio:
 
 .PHONY: uninstall-postman
 uninstall-postman:
-	$(HOME)/.local/lib/Postman
+	sudo rm -rf /opt/Postman
 
 .PHONY: sre
 sre:

@@ -2,8 +2,8 @@
 Name=PyCharm
 Comment=Code Editing for Python.
 GenericName=Text Editor
-Exec=/home/jn/.local/bin/pycharm %F
-Icon=/home/jn/.local/share/application-icons/pycharm.png
+Exec=/opt/pycharm/bin/pycharm %F
+Icon=/opt/pycharm/bin/pycharm.svg
 Type=Application
 StartupNotify=false
 StartupWMClass=Code
