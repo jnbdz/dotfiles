@@ -83,6 +83,7 @@ dev:
 	rm $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
 	wget -c https://dl.pstmn.io/download/latest/linux64 -P $(HOME)/Downloads
 	sudo tar -xvf $(HOME)/Downloads/linux64 -C /opt/
+	cp $(CURDIR)/.local/share/applications/postman.desktop $(HOME)/.local/share/applications/
 	rm $(HOME)/Downloads/linux64
 	for file in $(shell find $(CURDIR)/.local/bin/ -name ".*" -not -name ".gitignore" -not -name ".*.swp" -not -name "statusbar" -not -name "untar"); do \
 		f=$$(basename $$file); \
