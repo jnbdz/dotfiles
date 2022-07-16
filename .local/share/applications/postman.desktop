@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Postman
+Comment=Supercharge your API workflow.
+GenericName=postman
+Exec=/opt/Postman/Postman %F
+Icon=/opt/Postman/app/icons/icon_128x128.png
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=Development;API;
+MimeType=inode/directory;application/json;
+Keywords=postman;api;
