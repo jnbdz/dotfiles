@@ -2,6 +2,7 @@
 My dotfiles. At your own risk 🥴
 
 ## Install
+### Basic install
 ```bash
 cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic
 ```
@@ -17,9 +18,41 @@ sudo apt install -y make
 make basic
 ```
 
+### Dev install
+Install the `basic` and `dev`: 
+```bash
+cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic dev
+```
+Install all the IDEs (with `basic` and `dev`): 
+```bash
+cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic dev all-ide
+```
+
+#### Adding the SSH keys
+
 After adding the SSH keys to the `~/.ssh/` directory you need to load ssh: 
 ```bash
 eval "$(ssh-agent -s)"
+```
+
+### Multimedia install
+```bash
+cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic multimedia
+```
+
+### Graphics install
+```bash
+cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic graphics
+```
+
+### Office install
+```bash
+cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic office
+```
+
+### SRE install
+```bash
+cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic sre
 ```
 
 ## Changing `/etc/apt/sources.list` in Debian to use Kali pkg source
