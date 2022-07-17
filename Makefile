@@ -117,7 +117,7 @@ android-studio:
 		libclang-dev
 	wget -c https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$(androidStudioVersion)/android-studio-$(androidStudioVersion)-linux.tar.gz -P $(HOME)/Downloads/
 	sudo tar -xvf $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz -C /opt/
-	sudo mv /opt/android-studio* /opt/android-studio
+	[ ! -d "/opt/android-studio" ] && sudo mv /opt/android-studio* /opt/android-studio
 	mkdir -p $(HOME)/.local/share/applications/
 	cp $(CURDIR)/.local/share/applications/android-studio.desktop $(HOME)/.local/share/applications/
 	rm $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz
@@ -131,7 +131,7 @@ uninstall-android-studio:
 idea:
 	wget -c https://download.jetbrains.com/idea/ideaIC-$(ideaVersion).tar.gz -P $(HOME)/Downloads/
 	sudo tar -xvf $(HOME)/Downloads/ideaIC-$(ideaVersion).tar.gz -C /opt/
-	sudo mv /opt/idea* /opt/idea
+	[ ! -d "/opt/idea" ] && sudo mv /opt/idea* /opt/idea
 	mkdir -p $(HOME)/.local/share/applications/
 	cp $(CURDIR)/.local/share/applications/idea.desktop $(HOME)/.local/share/applications/
 	rm $(HOME)/Downloads/ideaIC-$(ideaVersion).tar.gz
@@ -145,7 +145,7 @@ uninstall-idea:
 pycharm:
 	wget -c https://download.jetbrains.com/python/pycharm-community-$(pycharmVersion).tar.gz -P $(HOME)/Downloads/
 	sudo tar -xvf $(HOME)/Downloads/pycharm-community-$(pycharmVersion).tar.gz -C /opt/
-	sudo mv /opt/pycharm* /opt/pycharm
+	[ ! -d "/opt/pycharm" ] && sudo mv /opt/pycharm* /opt/pycharm
 	mkdir -p $(HOME)/.local/share/applications/
 	cp $(CURDIR)/.local/share/applications/pycharm.desktop $(HOME)/.local/share/applications/
 	rm $(HOME)/Downloads/pycharm-community-$(pycharmVersion).tar.gz
