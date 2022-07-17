@@ -40,6 +40,7 @@ basic:
 	mkdir -p $(HOME)/.local/bin
 	mkdir -p $(HOME)/.local/lib
 	mkdir -p $(HOME)/.local/share
+	mkdir -p $(HOME)/.local/share/applications/
 	mkdir -p $(HOME)/.config
 	ln -snf $(CURDIR)/.config/containers $(HOME)/.config/containers
 	ln -snf $(CURDIR)/.config/shell $(HOME)/.config/shell
