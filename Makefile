@@ -85,6 +85,7 @@ dev:
 	rm $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
 	wget -c https://dl.pstmn.io/download/latest/linux64 -P $(HOME)/Downloads
 	sudo tar -xvf $(HOME)/Downloads/linux64 -C /opt/
+	[ ! -d "/opt/Postman" ] && sudo mv /opt/Postman* /opt/Postman
 	cp $(CURDIR)/.local/share/applications/postman.desktop $(HOME)/.local/share/applications/
 	rm $(HOME)/Downloads/linux64
 	for file in $(shell find $(CURDIR)/.local/bin/ -name ".*" -not -name ".gitignore" -not -name ".*.swp" -not -name "statusbar" -not -name "untar"); do \
@@ -118,6 +119,7 @@ android-studio:
 		libbz2-1.0 \
 		libclang-dev
 	wget -c https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$(androidStudioVersion)/android-studio-$(androidStudioVersion)-linux.tar.gz -P $(HOME)/Downloads/
+	[ ! -d "/opt/android-studio" ] && sudo rm -rf /opt/android-studio
 	sudo tar -xvf $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz -C /opt/
 	[ ! -d "/opt/android-studio" ] && sudo mv /opt/android-studio* /opt/android-studio
 	mkdir -p $(HOME)/.local/share/applications/
@@ -132,6 +134,7 @@ uninstall-android-studio:
 .PHONY: idea
 idea:
 	wget -c https://download.jetbrains.com/idea/ideaIC-$(ideaVersion).tar.gz -P $(HOME)/Downloads/
+	[ ! -d "/opt/idea" ] && sudo rm -rf /opt/idea
 	sudo tar -xvf $(HOME)/Downloads/ideaIC-$(ideaVersion).tar.gz -C /opt/
 	[ ! -d "/opt/idea" ] && sudo mv /opt/idea* /opt/idea
 	mkdir -p $(HOME)/.local/share/applications/
@@ -146,6 +149,7 @@ uninstall-idea:
 .PHONY: pycharm
 pycharm:
 	wget -c https://download.jetbrains.com/python/pycharm-community-$(pycharmVersion).tar.gz -P $(HOME)/Downloads/
+	[ ! -d "/opt/pycharm" ] && sudo rm -rf /opt/pycharm
 	sudo tar -xvf $(HOME)/Downloads/pycharm-community-$(pycharmVersion).tar.gz -C /opt/
 	[ ! -d "/opt/pycharm" ] && sudo mv /opt/pycharm* /opt/pycharm
 	mkdir -p $(HOME)/.local/share/applications/
