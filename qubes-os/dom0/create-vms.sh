@@ -3,7 +3,7 @@
 echo " > Create Kali template"
 #qvm-create --class TemplateVM --template debian-11 --property label=purple kali-debian-11
 qvm-create --class StandaloneVM --template debian-11 --property label=orange Dev
-qvm-volume extend Dev:root 15
+qvm-volume extend Dev:root 20
 qvm-volume extend Dev:private 100
 
 qvm-create --class StandaloneVM --template debian-11 --property label=red SRE

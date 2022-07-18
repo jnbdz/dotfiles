@@ -2,7 +2,7 @@
 Name=IntelliJ IDEA
 Comment=Code Editing for Java.
 GenericName=Text Editor
-Exec=/opt/idea/bin/idea %F
+Exec=/opt/idea/bin/idea.sh %F
 Icon=/opt/idea/bin/idea.svg
 Type=Application
 StartupNotify=false
