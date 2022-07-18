@@ -51,6 +51,11 @@ basic:
 	ln -snf $(CURDIR)/.local/share/helpdocs/ $(HOME)/.local/share/helpdocs
 	ln -snf $(CURDIR)/.local/bin/statusbar/ $(HOME)/.local/bin/statusbar
 	git clone https://github.com/facebook/PathPicker.git
+	if [ ! -d "/opt/PathPicker" ]; \
+	then \
+		sudo rm -rf /opt/PathPicker; \
+		sudo rm $(HOME)/.local/bin/fpp; \
+	fi; \
 	sudo mv $(CURDIR)/PathPicker /opt/PathPicker
 	sudo chown -R user /opt/PathPicker
 	sudo chgrp -R user /opt/PathPicker
