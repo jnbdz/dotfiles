@@ -112,7 +112,7 @@ selinux:
 		auditd
 
 .PHONY: all-ide
-all-ide: android-studio idea pycharms rstudio
+all-ide: android-studio idea pycharm rstudio
 
 .PHONY: uninstall-all-ide
 uninstall-all-ide: uninstall-android-studio uninstall-idea uninstall-pycharm
