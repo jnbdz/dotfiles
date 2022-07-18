@@ -88,7 +88,10 @@ dev:
 	rm $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
 	wget -c https://dl.pstmn.io/download/latest/linux64 -P $(HOME)/Downloads
 	sudo tar -xvf $(HOME)/Downloads/linux64 -C /opt/
-	[ ! -d "/opt/Postman" ] && sudo mv /opt/Postman* /opt/Postman
+	if [ ! -d "/opt/Postman" ]; \
+	then \
+		sudo mv /opt/Postman* /opt/Postman; \
+	fi; \
 	sudo chown -R user /opt/Postman
 	sudo chgrp -R user /opt/Postman
 	cp $(CURDIR)/.local/share/applications/postman.desktop $(HOME)/.local/share/applications/
@@ -124,9 +127,15 @@ android-studio:
 		libbz2-1.0 \
 		libclang-dev
 	wget -c https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$(androidStudioVersion)/android-studio-$(androidStudioVersion)-linux.tar.gz -P $(HOME)/Downloads/
-	[ ! -d "/opt/android-studio" ] && sudo rm -rf /opt/android-studio
+	if [ ! -d "/opt/android-studio" ]; \
+	then \
+		sudo rm -rf /opt/android-studio; \
+	fi; \
 	sudo tar -xvf $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz -C /opt/
-	[ ! -d "/opt/android-studio" ] && sudo mv /opt/android-studio* /opt/android-studio
+	if [ ! -d "/opt/android-studio" ]; \
+	then \
+		sudo mv /opt/android-studio* /opt/android-studio; \
+	fi; \
 	sudo chown -R user /opt/android-studio
 	sudo chgrp -R user /opt/android-studio
 	mkdir -p $(HOME)/.local/share/applications/
@@ -141,9 +150,15 @@ uninstall-android-studio:
 .PHONY: idea
 idea:
 	wget -c https://download.jetbrains.com/idea/ideaIC-$(ideaVersion).tar.gz -P $(HOME)/Downloads/
-	[ ! -d "/opt/idea" ] && sudo rm -rf /opt/idea
+	if [ ! -d "/opt/idea" ]; \
+	then \
+		sudo rm -rf /opt/idea; \
+	fi; \
 	sudo tar -xvf $(HOME)/Downloads/ideaIC-$(ideaVersion).tar.gz -C /opt/
-	[ ! -d "/opt/idea" ] && sudo mv /opt/idea* /opt/idea
+	if [ ! -d "/opt/idea" ]; \
+	then \
+		sudo mv /opt/idea* /opt/idea; \
+	fi; \
 	sudo chown -R user /opt/idea
 	sudo chgrp -R user /opt/idea
 	mkdir -p $(HOME)/.local/share/applications/
@@ -158,9 +173,15 @@ uninstall-idea:
 .PHONY: pycharm
 pycharm:
 	wget -c https://download.jetbrains.com/python/pycharm-community-$(pycharmVersion).tar.gz -P $(HOME)/Downloads/
-	[ ! -d "/opt/pycharm" ] && sudo rm -rf /opt/pycharm
+	if [ ! -d "/opt/pycharm" ]; \
+	then \
+		sudo rm -rf /opt/pycharm; \
+	fi; \
 	sudo tar -xvf $(HOME)/Downloads/pycharm-community-$(pycharmVersion).tar.gz -C /opt/
-	[ ! -d "/opt/pycharm" ] && sudo mv /opt/pycharm* /opt/pycharm
+	if [ ! -d "/opt/pycharm" ]; \
+	then \
+		sudo mv /opt/pycharm* /opt/pycharm; \
+	fi; \
 	sudo chown -R user /opt/pycharm
 	sudo chgrp -R user /opt/pycharm
 	mkdir -p $(HOME)/.local/share/applications/
