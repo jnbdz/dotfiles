@@ -51,7 +51,7 @@ basic:
 	ln -snf $(CURDIR)/.local/share/helpdocs/ $(HOME)/.local/share/helpdocs
 	ln -snf $(CURDIR)/.local/bin/statusbar/ $(HOME)/.local/bin/statusbar
 	git clone https://github.com/facebook/PathPicker.git
-	if [ ! -d "/opt/PathPicker" ]; \
+	if [ -d "/opt/PathPicker" ]; \
 	then \
 		sudo rm -rf /opt/PathPicker; \
 		sudo rm $(HOME)/.local/bin/fpp; \
@@ -92,6 +92,10 @@ dev:
 	sudo dpkg -i $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
 	rm $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
 	wget -c https://dl.pstmn.io/download/latest/linux64 -P $(HOME)/Downloads
+	if [ -d "/opt/Postman" ]; \
+	then \
+		sudo rm -rf /opt/Postman; \
+	fi; \
 	sudo tar -xvf $(HOME)/Downloads/linux64 -C /opt/
 	if [ ! -d "/opt/Postman" ]; \
 	then \
@@ -132,7 +136,7 @@ android-studio:
 		libbz2-1.0 \
 		libclang-dev
 	wget -c https://redirector.gvt1.com/edgedl/android/studio/ide-zips/$(androidStudioVersion)/android-studio-$(androidStudioVersion)-linux.tar.gz -P $(HOME)/Downloads/
-	if [ ! -d "/opt/android-studio" ]; \
+	if [ -d "/opt/android-studio" ]; \
 	then \
 		sudo rm -rf /opt/android-studio; \
 	fi; \
@@ -155,7 +159,7 @@ uninstall-android-studio:
 .PHONY: idea
 idea:
 	wget -c https://download.jetbrains.com/idea/ideaIC-$(ideaVersion).tar.gz -P $(HOME)/Downloads/
-	if [ ! -d "/opt/idea" ]; \
+	if [ -d "/opt/idea" ]; \
 	then \
 		sudo rm -rf /opt/idea; \
 	fi; \
@@ -178,7 +182,7 @@ uninstall-idea:
 .PHONY: pycharm
 pycharm:
 	wget -c https://download.jetbrains.com/python/pycharm-community-$(pycharmVersion).tar.gz -P $(HOME)/Downloads/
-	if [ ! -d "/opt/pycharm" ]; \
+	if [ -d "/opt/pycharm" ]; \
 	then \
 		sudo rm -rf /opt/pycharm; \
 	fi; \
