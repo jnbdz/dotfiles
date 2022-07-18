@@ -29,6 +29,7 @@ basic:
 		zsh \
 		xclip \
 		x11-apps \
+		ca-certificates \
 		kali-archive-keyring
 	sudo apt-get upgrade -y
 	sudo apt-get update --fix-missing
@@ -50,9 +51,11 @@ basic:
 	ln -snf $(CURDIR)/.local/share/helpdocs/ $(HOME)/.local/share/helpdocs
 	ln -snf $(CURDIR)/.local/bin/statusbar/ $(HOME)/.local/bin/statusbar
 	git clone https://github.com/facebook/PathPicker.git
-	mv $(CURDIR)/PathPicker $(HOME)/.local/lib/PathPicker
-	chmod +x $(HOME)/.local/lib/PathPicker/fpp
-	ln -snf $(HOME)/.local/lib/PathPicker/fpp $(HOME)/.local/bin/fpp
+	sudo mv $(CURDIR)/PathPicker /opt/PathPicker
+	sudo chown -R user /opt/PathPicker
+	sudo chgrp -R user /opt/PathPicker
+	sudo chmod +x /opt/PathPicker/fpp
+	ln -snf /opt/PathPicker/fpp $(HOME)/.local/bin/fpp
 	echo "\n# ZSH terminal" >> $(HOME)/.bashrc
 	echo "zsh" >> $(HOME)/.bashrc
 	echo "export PATH=$$PATH:$(HOME)/.local/bin/" >> $(HOME)/.bashrc
@@ -86,6 +89,8 @@ dev:
 	wget -c https://dl.pstmn.io/download/latest/linux64 -P $(HOME)/Downloads
 	sudo tar -xvf $(HOME)/Downloads/linux64 -C /opt/
 	[ ! -d "/opt/Postman" ] && sudo mv /opt/Postman* /opt/Postman
+	sudo chown -R user /opt/Postman
+	sudo chgrp -R user /opt/Postman
 	cp $(CURDIR)/.local/share/applications/postman.desktop $(HOME)/.local/share/applications/
 	rm $(HOME)/Downloads/linux64
 	for file in $(shell find $(CURDIR)/.local/bin/ -name ".*" -not -name ".gitignore" -not -name ".*.swp" -not -name "statusbar" -not -name "untar"); do \
@@ -122,6 +127,8 @@ android-studio:
 	[ ! -d "/opt/android-studio" ] && sudo rm -rf /opt/android-studio
 	sudo tar -xvf $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz -C /opt/
 	[ ! -d "/opt/android-studio" ] && sudo mv /opt/android-studio* /opt/android-studio
+	sudo chown -R user /opt/android-studio
+	sudo chgrp -R user /opt/android-studio
 	mkdir -p $(HOME)/.local/share/applications/
 	cp $(CURDIR)/.local/share/applications/android-studio.desktop $(HOME)/.local/share/applications/
 	rm $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz
@@ -137,6 +144,8 @@ idea:
 	[ ! -d "/opt/idea" ] && sudo rm -rf /opt/idea
 	sudo tar -xvf $(HOME)/Downloads/ideaIC-$(ideaVersion).tar.gz -C /opt/
 	[ ! -d "/opt/idea" ] && sudo mv /opt/idea* /opt/idea
+	sudo chown -R user /opt/idea
+	sudo chgrp -R user /opt/idea
 	mkdir -p $(HOME)/.local/share/applications/
 	cp $(CURDIR)/.local/share/applications/idea.desktop $(HOME)/.local/share/applications/
 	rm $(HOME)/Downloads/ideaIC-$(ideaVersion).tar.gz
@@ -152,6 +161,8 @@ pycharm:
 	[ ! -d "/opt/pycharm" ] && sudo rm -rf /opt/pycharm
 	sudo tar -xvf $(HOME)/Downloads/pycharm-community-$(pycharmVersion).tar.gz -C /opt/
 	[ ! -d "/opt/pycharm" ] && sudo mv /opt/pycharm* /opt/pycharm
+	sudo chown -R user /opt/pycharm
+	sudo chgrp -R user /opt/pycharm
 	mkdir -p $(HOME)/.local/share/applications/
 	cp $(CURDIR)/.local/share/applications/pycharm.desktop $(HOME)/.local/share/applications/
 	rm $(HOME)/Downloads/pycharm-community-$(pycharmVersion).tar.gz
@@ -164,8 +175,8 @@ uninstall-pycharm:
 .PHONY: rstudio
 rstudio:
 	wget -c https://download1.rstudio.org/desktop/bionic/amd64/rstudio-$(rStudioVersion)-amd64.deb -P $(HOME)/Downloads/
-	sudo dpkg -i $(HOME)/Downloads/rstudio-$(rStudioVersion)_amd64.deb
-	rm $(HOME)/Downloads/rstudio-$(rStudioVersion)_amd64.deb
+	sudo dpkg -i $(HOME)/Downloads/rstudio-$(rStudioVersion)-amd64.deb
+	rm $(HOME)/Downloads/rstudio-$(rStudioVersion)-amd64.deb
 
 .PHONY: uninstall-postman
 uninstall-postman:
