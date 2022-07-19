@@ -12,7 +12,7 @@ all: basic dev all-ide multimedia office sre iphone
 basic:
 	sudo apt-get update
 	sudo cp /etc/apt/sources.list /etc/apt/sources.list.bck
-	echo -e "deb https://deb.debian.org/debian bullseye main contrib non-free\ndeb https://deb.debian.org/debian-security bullseye-security main contrib non-free\ndeb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
+	echo "deb https://deb.debian.org/debian bullseye main contrib non-free\ndeb https://deb.debian.org/debian-security bullseye-security main contrib non-free\ndeb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
 	gpg --import kali-pub.asc
 	gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
 	export DEBIAN_FRONTEND=noninteractive
