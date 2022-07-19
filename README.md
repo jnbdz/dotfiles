@@ -124,3 +124,4 @@ eval "$(ssh-agent -s)"
 
 ## TODO
 - Added: https://github.com/zsh-users/zsh-autosuggestions (for systems that don't have it (Kali has it))
+- Test Office, Multimedia or Graphics

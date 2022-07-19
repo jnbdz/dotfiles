@@ -59,6 +59,7 @@ alias \
 	xr="sudo xbps-remove -R" \
 	xq="xbps-query" \
 	open="xdg-open" \
+	run="gtk-launch" \
 	activeports="lsof -i -P -n | grep LISTEN" \
 	untar="tar -xvf" \
 	ualt="update-alternatives" \
