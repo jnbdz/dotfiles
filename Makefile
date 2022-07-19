@@ -20,7 +20,11 @@ basic:
 	sudo apt-get install -y \
 		libwacom-common \
 		libsemanage-common \
-		libegl-mesa0 \
+		libegl-mesa0
+	sudo apt-get upgrade -y
+	sudo apt-get update --fix-missing
+	sudo apt-get upgrade -y
+	sudo apt-get install -y \
 		wget \
 		curl \
 		git \
@@ -42,9 +46,6 @@ basic:
 		fonts-noto-ui-core \
 		fonts-noto-ui-extra \
 		fonts-noto-unhinted
-	sudo apt-get upgrade -y
-	sudo apt-get update --fix-missing
-	sudo apt-get upgrade -y
 	ln -snf $(CURDIR)/.zshrc $(HOME)/.zshrc;
 	ln -snf $(CURDIR)/.vimrc $(HOME)/.vimrc;
 	mkdir -p ~/.ssh
