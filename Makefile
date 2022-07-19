@@ -30,7 +30,11 @@ basic:
 		xclip \
 		x11-apps \
 		ca-certificates \
-		kali-archive-keyring
+		kali-archive-keyring \
+		fonts-noto \
+		ttf-ancient-fonts \
+		xfonts-unifont \
+		ttf-unifont
 	sudo apt-get upgrade -y
 	sudo apt-get update --fix-missing
 	sudo apt-get upgrade -y
