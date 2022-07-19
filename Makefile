@@ -34,7 +34,8 @@ basic:
 		fonts-noto \
 		ttf-ancient-fonts \
 		xfonts-unifont \
-		ttf-unifont
+		ttf-unifont \
+		unifont
 	sudo apt-get upgrade -y
 	sudo apt-get update --fix-missing
 	sudo apt-get upgrade -y
@@ -70,11 +71,23 @@ basic:
 	echo "export PATH=$$PATH:$(HOME)/.local/bin/" >> $(HOME)/.bashrc
 	echo ". $(HOME)/.config/shell/aliasrc" >> $(HOME)/.bashrc
 
+.PHONY: suckless
+suckless:
+	sudo apt-get update
+	sudo apt-get install -y \
+		libx11-dev \
+		pkg-config \
+		libharfbuzz-dev \
+		libfontconfig-dev \
+		libxft-dev \
+		build-essential
+
 .PHONY: dev
 dev:
 	export DEBIAN_FRONTEND=noninteractive
 	sudo apt-get update
 	sudo apt-get install -y \
+		build-essential \
 		podman \
 		libgstreamer1.0-dev \
 		libgstreamer-plugins-base1.0-dev \
