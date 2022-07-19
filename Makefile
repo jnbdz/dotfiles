@@ -31,11 +31,17 @@ basic:
 		x11-apps \
 		ca-certificates \
 		kali-archive-keyring \
-		fonts-noto \
 		ttf-ancient-fonts \
 		xfonts-unifont \
 		ttf-unifont \
-		unifont
+		unifont \
+		fonts-noto-cjk \
+		fonts-noto-cjk-extra \
+		fonts-noto-core \
+		fonts-noto-extra \
+		fonts-noto-ui-core \
+		fonts-noto-ui-extra \
+		fonts-noto-unhinted
 	sudo apt-get upgrade -y
 	sudo apt-get update --fix-missing
 	sudo apt-get upgrade -y
