@@ -3,29 +3,78 @@ My dotfiles. At your own risk 🥴
 
 ## Install
 ### Basic install
+With `curl`: 
 ```bash
-cd ~ && sudo apt update && sudo apt install -y git make && git clone git@github.com:jnbdz/dotfiles.git .dotfiles && cd .dotfiles && make basic
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+curl -L https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip > main.zip && \
+unzip main.zip && \
+rm main.zip && \
+mv dotfiles-main .dotfiles && \
+cd .dotfiles && \
+make basic
 ```
-OR
+
+With `git`: 
 ```bash
-cd ~
-wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip
-unzip main.zip
-mv dotfiles-main dotfiles
-rm main.zip
-cd dotfiles
-sudo apt install -y make
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+git clone git@github.com:jnbdz/dotfiles.git .dotfiles && \
+cd .dotfiles && \
 make basic
 ```
 
 ### Dev install
-Install the `basic` and `dev`: 
+Install the `basic` and `dev`.
+
+With `curl`: 
 ```bash
-cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic dev
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+curl -L https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip > main.zip && \
+unzip main.zip && \
+rm main.zip && \
+mv dotfiles-main .dotfiles && \
+cd .dotfiles && \
+make basic dev
 ```
-Install all the IDEs (with `basic` and `dev`): 
+
+With `git`: 
 ```bash
-cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic dev all-ide
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+git clone git@github.com:jnbdz/dotfiles.git .dotfiles && \
+cd .dotfiles && \
+make basic dev
+```
+
+Install all the IDEs (with `basic` and `dev`).
+
+With `curl`:
+```bash
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+curl -L https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip > main.zip && \
+unzip main.zip && \
+rm main.zip && \
+mv dotfiles-main .dotfiles && \
+cd .dotfiles && \
+make basic dev all-ide
+```
+
+With `git`:
+```bash
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+git clone git@github.com:jnbdz/dotfiles.git .dotfiles && \
+cd .dotfiles && \
+make basic dev all-ide
 ```
 
 #### Adding the SSH keys
