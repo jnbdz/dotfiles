@@ -83,6 +83,27 @@ suckless:
 		libxft-dev \
 		build-essential
 
+.PHONY: dwm
+dwm:
+	curl -L https://github.com/$(DWM_GITHUB_USER)/st/releases/download/v$(DWM_VERSION)/st-v$(DWM_VERSION).tar.gz > dwm-v$(DWM_VERSION).tar.gz
+	tar -xvf dwm-v$(DWM_VERSION).tar.gz
+	sudo mkdir -p /usr/local/bin
+	sudo cp -f dwm /usr/local/bin
+	sudo chmod 755 /usr/local/bin/dwm
+	sudo mkdir -p /usr/local/share/man1
+	sed "s/VERSION/$(DWM_VERSION)/g" < dwm.1 | sudo tee /usr/local/share/man1/dwm.1
+	sudo chmod 644 /usr/local/share/man1/dwm.1
+	sudo mkdir -p /usr/local/share/dwm
+	sudo cp -f larbs.mom /usr/local/share/dwm
+	sudo chmod 644 /usr/local/share/dwm/larbs.mom
+	rm dwm-v$(DWM_VERSION).tar.gz
+
+.PHONY: uninstall-dwm
+uninstall-dwm:
+	sudo rm -f /usr/local/bin/dwm\
+		/usr/local/share/dwm/larbs.mom\
+		/usr/local/share/man1/dwm.1
+
 .PHONY: st
 st:
 	curl -L https://github.com/$(ST_GITHUB_USER)/st/releases/download/v$(ST_VERSION)/st-v$(ST_VERSION).tar.gz > st-v$(ST_VERSION).tar.gz
