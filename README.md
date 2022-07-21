@@ -4,7 +4,7 @@ My dotfiles. At your own risk 🥴
 ## Install
 ### Basic install
 ```bash
-cd ~ && sudo apt install -y git make && git clone git@github.com:jnbdz/dotfiles.git .dotfiles && cd .dotfiles && make basic
+cd ~ && sudo apt update && sudo apt install -y git make && git clone git@github.com:jnbdz/dotfiles.git .dotfiles && cd .dotfiles && make basic
 ```
 OR
 ```bash
