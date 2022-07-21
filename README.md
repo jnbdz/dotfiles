@@ -4,7 +4,7 @@ My dotfiles. At your own risk 🥴
 ## Install
 ### Basic install
 ```bash
-cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic
+cd ~ && sudo apt install -y git make && git clone git@github.com:jnbdz/dotfiles.git .dotfiles && cd .dotfiles && make basic
 ```
 OR
 ```bash
