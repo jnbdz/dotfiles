@@ -7,8 +7,8 @@ all: dwm st
 .PHONY: dwm
 dwm:
 	dnf install libXft
-	curl https://github.com/jnbdz/dwm/releases/download/v$(DWM_VERSION)/dwm-v$(DWM_VERSION).tar.gz --output dwm-v$(DWM_VERSION).tar.gz
+	curl -L https://github.com/jnbdz/dwm/releases/download/v$(DWM_VERSION)/dwm-v$(DWM_VERSION).tar.gz > dwm-v$(DWM_VERSION).tar.gz
 
 .PHONY: st
 st:
-	curl https://github.com/jnbdz/st/releases/download/v$(ST_VERSION)/st-v$(ST_VERSION).tar.gz --output st-v$(ST_VERSION).tar.gz
+	curl -L https://github.com/jnbdz/st/releases/download/v$(ST_VERSION)/st-v$(ST_VERSION).tar.gz > st-v$(ST_VERSION).tar.gz
