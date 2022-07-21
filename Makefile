@@ -1,5 +1,3 @@
-DOTFILES_PATH = $(HOME)/dotfiles
-
 GITHUB_USER = jnbdz
 
 ST_GITHUB_USER = $(GITHUB_USER)
@@ -102,17 +100,17 @@ suckless:
 st:
 	curl -L https://github.com/$(ST_GITHUB_USER)/st/releases/download/v$(ST_VERSION)/st-v$(ST_VERSION).tar.gz > st-v$(ST_VERSION).tar.gz
 	tar -xvf st-v$(ST_VERSION).tar.gz
-	sudo cp -f $(DOTFILES_PATH)/st-$(ST_VERSION)/st /usr/local/bin
-	sudo cp -f $(DOTFILES_PATH)/st-$(ST_VERSION)/st-copyout /usr/local/bin
-	sudo cp -f $(DOTFILES_PATH)/st-$(ST_VERSION)/st-urlhandler /usr/local/bin
+	sudo cp -f $(CURDIR)/st-$(ST_VERSION)/st /usr/local/bin
+	sudo cp -f $(CURDIR)/st-$(ST_VERSION)/st-copyout /usr/local/bin
+	sudo cp -f $(CURDIR)/st-$(ST_VERSION)/st-urlhandler /usr/local/bin
 	sudo chmod 755 /usr/local/bin/st
 	sudo chmod 755 /usr/local/bin/st-copyout
 	sudo chmod 755 /usr/local/bin/st-urlhandler
 	sudo mkdir -p /usr/local/share/man/man1
-	sed "s/VERSION/$(VERSION)/g" < sudo $(DOTFILES_PATH)/st-$(ST_VERSION)/st.1 | sudo tee /usr/local/share/man/man1/st.1
+	sed "s/VERSION/$(VERSION)/g" < $(CURDIR)/st-$(ST_VERSION)/st.1 | sudo tee /usr/local/share/man/man1/st.1
 	sudo chmod 644 /usr/local/share/man/man1/st.1
-	tic -sx $(DOTFILES_PATH)/st.info
-	rm -rf $(DOTFILES_PATH)/st-$(ST_VERSION)
+	tic -sx $(CURDIR)/st-$(ST_VERSION)/st.info
+	rm -rf $(CURDIR)/st-$(ST_VERSION)
 	rm st-v$(ST_VERSION).tar.gz
 	@echo Please see the README file regarding the terminfo entry of st.
 
