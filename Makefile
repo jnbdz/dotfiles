@@ -1,4 +1,14 @@
-# Dev
+DOTFILES_PATH = $(HOME)/dotfiles
+
+GITHUB_USER = jnbdz
+
+ST_GITHUB_USER = $(GITHUB_USER)
+ST_VERSION = 0.8.4
+
+DWM_GITHUB_USER = $(GITHUB_USER)
+DWM_VERSION = 6.2
+
+# Dev IDEs versions
 androidStudioVersion = 2021.2.1.15
 ideaVersion = 2022.1.3
 pycharmVersion = 2022.1.3
@@ -90,17 +100,20 @@ suckless:
 
 .PHONY: st
 st:
-	mkdir -p $(DESTDIR)$(PREFIX)/bin
-	cp -f st $(DESTDIR)$(PREFIX)/bin
-	cp -f st-copyout $(DESTDIR)$(PREFIX)/bin
-	cp -f st-urlhandler $(DESTDIR)$(PREFIX)/bin
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/st
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-copyout
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-urlhandler
-	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
-	sed "s/VERSION/$(VERSION)/g" < st.1 > $(DESTDIR)$(MANPREFIX)/man1/st.1
-	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/st.1
-	tic -sx st.info
+	curl -L https://github.com/$(ST_GITHUB_USER)/st/releases/download/v$(ST_VERSION)/st-v$(ST_VERSION).tar.gz > st-v$(ST_VERSION).tar.gz
+	tar -xvf st-v$(ST_VERSION).tar.gz
+	sudo cp -f $(DOTFILES_PATH)/st-$(ST_VERSION)/st /usr/local/bin
+	sudo cp -f $(DOTFILES_PATH)/st-$(ST_VERSION)/st-copyout /usr/local/bin
+	sudo cp -f $(DOTFILES_PATH)/st-$(ST_VERSION)/st-urlhandler /usr/local/bin
+	sudo chmod 755 /usr/local/bin/st
+	sudo chmod 755 /usr/local/bin/st-copyout
+	sudo chmod 755 /usr/local/bin/st-urlhandler
+	sudo mkdir -p /usr/local/share/man/man1
+	sed "s/VERSION/$(VERSION)/g" < sudo $(DOTFILES_PATH)/st-$(ST_VERSION)/st.1 | sudo tee /usr/local/share/man/man1/st.1
+	sudo chmod 644 /usr/local/share/man/man1/st.1
+	tic -sx $(DOTFILES_PATH)/st.info
+	rm -rf $(DOTFILES_PATH)/st-$(ST_VERSION)
+	rm st-v$(ST_VERSION).tar.gz
 	@echo Please see the README file regarding the terminfo entry of st.
 
 .PHONY: uninstall-st
