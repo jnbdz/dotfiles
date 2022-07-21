@@ -85,7 +85,7 @@ suckless:
 
 .PHONY: dwm
 dwm:
-	curl -L https://github.com/$(DWM_GITHUB_USER)/st/releases/download/v$(DWM_VERSION)/st-v$(DWM_VERSION).tar.gz > dwm-v$(DWM_VERSION).tar.gz
+	curl -L https://github.com/$(DWM_GITHUB_USER)/dwm/releases/download/v$(DWM_VERSION)/dwm-v$(DWM_VERSION).tar.gz > dwm-v$(DWM_VERSION).tar.gz
 	tar -xvf dwm-v$(DWM_VERSION).tar.gz
 	sudo mkdir -p /usr/local/bin
 	sudo cp -f dwm /usr/local/bin
