@@ -118,10 +118,10 @@ st:
 
 .PHONY: uninstall-st
 uninstall-st:
-	rm -f $(DESTDIR)$(PREFIX)/bin/st
-	rm -f $(DESTDIR)$(PREFIX)/bin/st-copyout
-	rm -f $(DESTDIR)$(PREFIX)/bin/st-urlhandler
-	rm -f $(DESTDIR)$(MANPREFIX)/man1/st.1
+	rm -f /usr/local/bin/st
+	rm -f /usr/local/bin/st-copyout
+	rm -f /usr/local/bin/st-urlhandler
+	rm -f /usr/local/share/man/man1/st.1
 
 .PHONY: dev
 dev:
