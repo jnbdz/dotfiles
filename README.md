@@ -85,23 +85,99 @@ eval "$(ssh-agent -s)"
 ```
 
 ### Multimedia install
+With `curl`: 
 ```bash
-cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic multimedia
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+curl -L https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip > main.zip && \
+unzip main.zip && \
+rm main.zip && \
+mv dotfiles-main .dotfiles && \
+cd .dotfiles && \
+make basic multimedia
+```
+
+With `git`: 
+```bash
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+git clone git@github.com:jnbdz/dotfiles.git .dotfiles && \
+cd .dotfiles && \
+make basic multimedia
 ```
 
 ### Graphics install
+With `curl`: 
 ```bash
-cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic graphics
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+curl -L https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip > main.zip && \
+unzip main.zip && \
+rm main.zip && \
+mv dotfiles-main .dotfiles && \
+cd .dotfiles && \
+make basic graphics
+```
+
+With `git`: 
+```bash
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+git clone git@github.com:jnbdz/dotfiles.git .dotfiles && \
+cd .dotfiles && \
+make basic graphics
 ```
 
 ### Office install
+With `curl`: 
 ```bash
-cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic office
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+curl -L https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip > main.zip && \
+unzip main.zip && \
+rm main.zip && \
+mv dotfiles-main .dotfiles && \
+cd .dotfiles && \
+make basic office
+```
+
+With `git`: 
+```bash
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+git clone git@github.com:jnbdz/dotfiles.git .dotfiles && \
+cd .dotfiles && \
+make basic office
 ```
 
 ### SRE install
+With `curl`: 
 ```bash
-cd ~ && wget -c https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip && unzip main.zip && mv dotfiles-main dotfiles && rm main.zip && cd dotfiles && sudo apt install -y make && make basic sre
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+curl -L https://github.com/jnbdz/dotfiles/archive/refs/heads/main.zip > main.zip && \
+unzip main.zip && \
+rm main.zip && \
+mv dotfiles-main .dotfiles && \
+cd .dotfiles && \
+make basic sre
+```
+
+With `git`: 
+```bash
+cd ~ && \
+sudo apt update && \
+sudo apt install -y git make && \
+git clone git@github.com:jnbdz/dotfiles.git .dotfiles && \
+cd .dotfiles && \
+make basic sre
 ```
 
 ## Changing `/etc/apt/sources.list` in Debian to use Kali pkg source
