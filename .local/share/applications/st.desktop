@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=st
+Comment=Suckless terminal.
+GenericName=Terminal
+Exec=st %F
+Type=Application
+StartupNotify=false
+StartupWMClass=Terminal
+Categories=Terminal;Console;
+Keywords=st;terminal;console;
