@@ -118,6 +118,7 @@ st:
 	sed "s/VERSION/$(VERSION)/g" < $(CURDIR)/st-$(ST_VERSION)/st.1 | sudo tee /usr/local/share/man/man1/st.1
 	sudo chmod 644 /usr/local/share/man/man1/st.1
 	tic -sx $(CURDIR)/st-$(ST_VERSION)/st.info
+	cp $(CURDIR)/.local/share/applications/st.desktop $(HOME)/.local/share/applications/
 	rm -rf $(CURDIR)/st-$(ST_VERSION)
 	rm st-v$(ST_VERSION).tar.gz
 	@echo Please see the README file regarding the terminfo entry of st.
