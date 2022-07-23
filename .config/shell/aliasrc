@@ -137,4 +137,5 @@ alias capture="xwd -root | xwdtopnm | pnmtopng > capture.png"
 alias \
 	wifipass="sudo vim /etc/NetworkManager/system-connections/" \
 	lswifi="nmcli device wifi list" \
-	whichwifi="iwgetid -r"
+	whichwifi="iwgetid -r" \
+	wifiscan="sudo iwlist wlan0 scan"
