@@ -133,3 +133,5 @@ alias prikey="more ~/.ssh/id_ed25519 | xclip -selection primary | echo '=> Priva
 # Screenshot
 # Source: https://wiki.debian.org/ScreenShots
 alias capture="xwd -root | xwdtopnm | pnmtopng > capture.png"
+
+alias wifipass="sudo vim /etc/NetworkManager/system-connections/"
