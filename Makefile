@@ -152,6 +152,7 @@ dev:
 		gstreamer1.0-gtk3 \
 		gstreamer1.0-qt5 \
 		gstreamer1.0-pulseaudio
+	echo "\n[registries.search]\nregistries = ['docker.io', 'quay.io', 'registry.fedoraproject.org', 'registry.access.redhat.com']" | sudo tee -a /etc/containers/registries.conf
 	mkdir -p $(HOME)/.local/share/applications/
 	wget -c https://az764295.vo.msecnd.net/stable/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/code_$(vsCodeVersion)_amd64.deb -P ~/Downloads/
 	sudo dpkg -i $(HOME)/Downloads/code_$(vsCodeVersion)_amd64.deb
