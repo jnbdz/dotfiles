@@ -1,10 +1,12 @@
 include config.mk
 
+.DEFAULT_GOAL := help
+
 .PHONY: all
-all: basic dev all-ide multimedia office sre iphone
+all: basic dev all-ide multimedia office sre iphone ## Install all types of environment
 
 .PHONY: basic
-basic:
+basic: ## Setup the basic environment
 	sudo apt-get update
 	sudo cp /etc/apt/sources.list /etc/apt/sources.list.bck
 	echo "deb https://deb.debian.org/debian bullseye main contrib non-free\ndeb https://deb.debian.org/debian-security bullseye-security main contrib non-free\ndeb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
@@ -73,7 +75,7 @@ basic:
 	echo ". $(HOME)/.config/shell/aliasrc" >> $(HOME)/.bashrc
 
 .PHONY: suckless
-suckless:
+suckless: ## Install all the packages that are needed to compile the Suckless projects
 	sudo apt-get update
 	sudo apt-get install -y \
 		libx11-dev \
@@ -84,7 +86,7 @@ suckless:
 		build-essential
 
 .PHONY: dwm
-dwm:
+dwm: ## Install dwm (should already be compiled)
 	curl -L https://github.com/$(DWM_GITHUB_USER)/dwm/releases/download/v$(DWM_VERSION)/dwm-v$(DWM_VERSION).tar.gz > dwm-v$(DWM_VERSION).tar.gz
 	tar -xvf dwm-v$(DWM_VERSION).tar.gz
 	sudo mkdir -p /usr/local/bin
@@ -99,13 +101,13 @@ dwm:
 	rm dwm-v$(DWM_VERSION).tar.gz
 
 .PHONY: uninstall-dwm
-uninstall-dwm:
+uninstall-dwm: ## Uninstall dwm
 	sudo rm -f /usr/local/bin/dwm\
 		/usr/local/share/dwm/larbs.mom\
 		/usr/local/share/man1/dwm.1
 
 .PHONY: st
-st:
+st: ## Install st terminal (should already be compiled)
 	curl -L https://github.com/$(ST_GITHUB_USER)/st/releases/download/v$(ST_VERSION)/st-v$(ST_VERSION).tar.gz > st-v$(ST_VERSION).tar.gz
 	tar -xvf st-v$(ST_VERSION).tar.gz
 	sudo cp -f $(CURDIR)/st-$(ST_VERSION)/st /usr/local/bin
@@ -124,14 +126,14 @@ st:
 	@echo Please see the README file regarding the terminfo entry of st.
 
 .PHONY: uninstall-st
-uninstall-st:
+uninstall-st: ## Uninstall the st terminal
 	rm -f /usr/local/bin/st
 	rm -f /usr/local/bin/st-copyout
 	rm -f /usr/local/bin/st-urlhandler
 	rm -f /usr/local/share/man/man1/st.1
 
 .PHONY: dev
-dev:
+dev: ## Setup the dev environment
 	export DEBIAN_FRONTEND=noninteractive
 	sudo apt-get update
 	sudo apt-get install -y \
@@ -180,20 +182,20 @@ dev:
 	mkdir -p $(HOME)/Tutorials
 
 .PHONY: selinux
-selinux:
+selinux: ## Install SELinux
 	sudo apt-get install -y \
 		selinux-basics \
 		selinux-policy-default \
 		auditd
 
 .PHONY: all-ide
-all-ide: android-studio idea pycharm rstudio
+all-ide: android-studio idea pycharm rstudio ## Install all the IDEs (Android Studio, IntelliJ (idea), PyCharm, RStudio)
 
 .PHONY: uninstall-all-ide
-uninstall-all-ide: uninstall-android-studio uninstall-idea uninstall-pycharm
+uninstall-all-ide: uninstall-android-studio uninstall-idea uninstall-pycharm ## Uninstall all the IDEs (Android Studio, IntelliJ (idea), PyCharm, RStudio)
 
 .PHONY: android-studio
-android-studio:
+android-studio: ## Install Android Studio
 	sudo apt install -y \
 		libc6 \
 		libncurses5 \
@@ -218,12 +220,12 @@ android-studio:
 	rm $(HOME)/Downloads/android-studio-$(androidStudioVersion)-linux.tar.gz
 
 .PHONY: uninstall-android-studio
-uninstall-android-studio:
+uninstall-android-studio: ## Uninstall Android Studio
 	sudo rm -rf /opt/android-studio
 	rm  $(HOME)/.local/share/applications/android-studio.desktop
 
 .PHONY: idea
-idea:
+idea: ## Install idea IDE
 	wget -c https://download.jetbrains.com/idea/ideaIC-$(ideaVersion).tar.gz -P $(HOME)/Downloads/
 	if [ -d "/opt/idea" ]; \
 	then \
@@ -241,12 +243,12 @@ idea:
 	rm $(HOME)/Downloads/ideaIC-$(ideaVersion).tar.gz
 
 .PHONY: uninstall-idea
-uninstall-idea:
+uninstall-idea: ## Uninstall idea IDE
 	sudo rm -rf /opt/idea
 	rm  $(HOME)/.local/share/applications/idea.desktop
 
 .PHONY: pycharm
-pycharm:
+pycharm: ## Install PyCharm
 	wget -c https://download.jetbrains.com/python/pycharm-community-$(pycharmVersion).tar.gz -P $(HOME)/Downloads/
 	if [ -d "/opt/pycharm" ]; \
 	then \
@@ -264,12 +266,12 @@ pycharm:
 	rm $(HOME)/Downloads/pycharm-community-$(pycharmVersion).tar.gz
 
 .PHONY: uninstall-pycharm
-uninstall-pycharm:
+uninstall-pycharm: ## Uninstall PyCharm
 	sudo rm -rf /opt/pycharm
 	rm $(HOME)/.local/share/applications/pycharm.desktop
 
 .PHONY: rstudio
-rstudio:
+rstudio: ## Install RStudio (uninstalling can be done by using `apt remove r-base` command)
 	sudo apt-get update
 	sudo apt-get install -y r-base
 	wget -c https://download1.rstudio.org/desktop/bionic/amd64/rstudio-$(rStudioVersion)-amd64.deb -P $(HOME)/Downloads/
@@ -277,12 +279,12 @@ rstudio:
 	rm $(HOME)/Downloads/rstudio-$(rStudioVersion)-amd64.deb
 
 .PHONY: uninstall-postman
-uninstall-postman:
+uninstall-postman: ## Uninstall Postman (it is intalled using dev option)
 	sudo rm -rf /opt/Postman
 	sudo apt-get remove -y r-base
 
 .PHONY: sre
-sre:
+sre: ## Setup the Software Reverse engineering environment
 	sudo apt-get update
 	sudo apt-get install -y \
 		kali-tools-reverse-engineering \
@@ -291,7 +293,7 @@ sre:
 		ghidra-dbgsym
 
 .PHONY: iphone
-iphone:
+iphone: ## Install the tools to be able to access your IPhone data via Linux
 	sudo apt-get update
 	sudo apt-get install -y \
 		ifuse \
@@ -300,7 +302,7 @@ iphone:
 		libimobiledevice-utils
 
 .PHONY: uninstall-iphone
-uninstall-iphone:
+uninstall-iphone: ## Uninstall IPhone tools
 	sudo apt-get remove -y \
 		ifuse \
 		usbmuxd \
@@ -308,7 +310,7 @@ uninstall-iphone:
 		libimobiledevice-utils
 
 .PHONY: office
-office:
+office: ## Setup the office environment (it commes with applications to access and modify documents)
 	sudo apt-get update
 	sudo apt-get install -y \
 		libreoffice \
@@ -320,7 +322,7 @@ office:
 		pandoc
 
 .PHONY: uninstall-office
-uninstall-office:
+uninstall-office: ## Uninstall the applications for the office enviroment
 	sudo apt-get purge -y \
 		libreoffice \
 		asciidoc \
@@ -331,7 +333,7 @@ uninstall-office:
 		pandoc
 
 .PHONY: graphics
-graphics:
+graphics: ## Setup the Graphics environment
 	sudo apt-get update
 	sudo apt-get install -y \
 		gimp \
@@ -339,14 +341,14 @@ graphics:
 		imagemagick
 
 .PHONY: uninstall-graphics
-uninstall-graphics:
+uninstall-graphics: ## Uninstall the Graphics environment
 	sudo apt-get remove -y \
 		gimp \
 		inkscape \
 		imagemagick
 
 .PHONY: multimedia
-multimedia:
+multimedia: ## Setup the multimedia environment
 	sudo apt-get update
 	sudo apt-get install -y \
 		gpac \
@@ -362,5 +364,5 @@ multimedia:
 		youtube-dl
 
 .PHONY: help
-help:
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+help: ## Help
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sed 's/Makefile://' | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
