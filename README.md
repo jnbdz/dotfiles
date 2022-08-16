@@ -221,6 +221,9 @@ sudo gpg -a --export 7D8D0BF6 | apt-key add -
 apt update
 ```
 
+## Sources
+- get-pip.py - https://bootstrap.pypa.io/get-pip.py and https://packaging.python.org/en/latest/tutorials/installing-packages/
+
 ## Activate the SSH
 Verify that the `~/.ssh/` dir has the right permission level: 
 ```bash
