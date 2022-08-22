@@ -137,6 +137,7 @@ dev: ## Setup the dev environment
 	export DEBIAN_FRONTEND=noninteractive
 	sudo apt-get update
 	sudo apt-get install -y \
+		git-flow \
 		build-essential \
 		podman \
 		libgstreamer1.0-dev \
