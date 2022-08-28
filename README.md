@@ -253,3 +253,6 @@ eval "$(ssh-agent -s)"
 ## TODO
 - Added: https://github.com/zsh-users/zsh-autosuggestions (for systems that don't have it (Kali has it))
 - Test Office, Multimedia or Graphics
+
+## Resources
+- [Gogh | GitHub](https://github.com/Gogh-Co/Gogh) - Color Scheme for your Terminal (helps with color selection) ([Gogh](https://gogh-co.github.io/Gogh/))
