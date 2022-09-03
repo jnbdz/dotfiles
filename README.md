@@ -245,6 +245,41 @@ eval "$(ssh-agent -s)"
 ```
 *Source: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent*
 
+## DWM - New design
+### Colors
+- #2E3440 - very dark blue (background) top bar uses this color
+- #94535d - rgba(148,83,93,255) - darker red
+- #bf616a - rgba(191,97,106,255) - red
+- #bf616a - rgba(191,97,106,255) - another red
+- #a3be8c - rgba(163,190,140,255) - green
+- #ebcb8b - rgba(235,203,139,255) - yellow
+- #81a1c1 - rgba(129,161,193,255) - darker blue
+- #b48ead - rgba(180,142,173,255) - purple
+- #88c0d0 - rgba(136,192,208,255) - blue
+- #7594C7 - - Blue gray
+- #e5e9f0 - rgba(229,233,240,255) - whitish
+- #C78C75 - - orange
+- #F0801F - - orange
+- #EC6630
+- #B55B0D
+- #C76c17
+- #D06224 (orange), #AE431E (orange-red), #8A8635 (green), #E9C891 (skin color (belge))
+- #C36839 (orange (seems to be best))
+- #EF5B0C - orange
+- #D36B00 - orange
+- #d2d6de - rgba(210,214,222,255) - gray
+- #2e3440 -rgba(46,52,64,255) - black
+
+More interesting colors: 
+- #8f5e15 - very dark orange
+- #990000 - dark red or #8c4351
+- #bfbfbf - dark gray use with white or - #e5e5e5 or #9699a3
+- #485e30 - dark green
+- #5a4a78 - dark purple
+- #343b58 - very dark purple
+- #34548a - dark blue
+- #0f4b6e - dark green & blue
+
 ## Inspired by
 - https://github.com/LukeSmithxyz/voidrice
 - https://github.com/LukeSmithxyz/LARBS
@@ -256,3 +291,4 @@ eval "$(ssh-agent -s)"
 
 ## Resources
 - [Gogh | GitHub](https://github.com/Gogh-Co/Gogh) - Color Scheme for your Terminal (helps with color selection) ([Gogh](https://gogh-co.github.io/Gogh/))
+- [Color Hunt](https://colorhunt.co/palette/)
