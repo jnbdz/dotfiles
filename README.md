@@ -267,8 +267,10 @@ eval "$(ssh-agent -s)"
 - #C36839 (orange (seems to be best))
 - #EF5B0C - orange
 - #D36B00 - orange
+- #C29055 - nice orange
 - #d2d6de - rgba(210,214,222,255) - gray
-- #2e3440 -rgba(46,52,64,255) - black
+- #2e3440 - rgba(46,52,64,255) - black
+- #3b4252 - border color
 
 More interesting colors: 
 - #8f5e15 - very dark orange
