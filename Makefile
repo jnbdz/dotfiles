@@ -121,6 +121,8 @@ st: ## Install st terminal (should already be compiled)
 	sudo chmod 644 /usr/local/share/man/man1/st.1
 	tic -sx $(CURDIR)/st-$(ST_VERSION)/st.info
 	cp $(CURDIR)/.local/share/applications/st.desktop $(HOME)/.local/share/applications/
+	sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/st 210
+	sudo update-alternatives --set x-terminal-emulator $$(sudo update-alternatives --list x-terminal-emulator | grep -i st)
 	rm -rf $(CURDIR)/st-$(ST_VERSION)
 	rm st-v$(ST_VERSION).tar.gz
 	@echo Please see the README file regarding the terminfo entry of st.
