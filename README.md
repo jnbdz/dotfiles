@@ -292,3 +292,4 @@ More interesting colors:
 ## Resources
 - [Gogh | GitHub](https://github.com/Gogh-Co/Gogh) - Color Scheme for your Terminal (helps with color selection) ([Gogh](https://gogh-co.github.io/Gogh/))
 - [Color Hunt](https://colorhunt.co/palette/)
+- [Good example with DWM and Vintage Retro](https://i.redd.it/c1c51k21y4c31.png)
