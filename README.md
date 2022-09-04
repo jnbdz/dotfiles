@@ -293,6 +293,8 @@ Source: https://www.youtube.com/watch?v=PzObHq72Vug
 
 To change the transparency: (85 * 255) / 100
 
+After that got to: https://binaryhexconverter.com/decimal-to-hex-converter
+
 Replace the line: 
 0xD8000000
 
