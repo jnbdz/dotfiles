@@ -258,6 +258,12 @@ For terminal:
 x-terminal-emulator
 ```
 
+## Theming
+### Plymouth
+```bash
+/usr/share/plymouth/themes/qubes-dark
+```
+
 ## DWM - New design
 ### Colors
 - #2E3440 - very dark blue (background) top bar uses this color
