@@ -245,6 +245,19 @@ eval "$(ssh-agent -s)"
 ```
 *Source: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent*
 
+## Commands
+### `update-alternatives`
+```bash
+sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/google-chrome-beta 50
+```
+```bash
+sudo update-alternatives --config x-www-browser
+```
+For terminal:
+```bash
+x-terminal-emulator
+```
+
 ## DWM - New design
 ### Colors
 - #2E3440 - very dark blue (background) top bar uses this color
