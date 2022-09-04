@@ -289,6 +289,12 @@ echo '
 # percentage * 255 / 100 , then take number and put in url above
 # take 2 chars and add then after 0x
 ```
+Source: https://www.youtube.com/watch?v=PzObHq72Vug
+
+To change the transparency: (85 * 255) / 100
+
+Replace the line: 
+0xD8000000
 
 ## DWM - New design
 ### Colors
