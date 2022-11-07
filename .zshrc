@@ -1,5 +1,8 @@
 # ~/.zshrc file for zsh interactive shells.
 # see /usr/share/doc/zsh/examples/zshrc for examples
+# Sources: 
+# - Kali Linux
+# - https://www.themoderncoder.com/add-git-branch-information-to-your-zsh-prompt/
 
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
@@ -9,6 +12,7 @@ setopt nonomatch           # hide error message if there is no match for the pat
 setopt notify              # report the status of background jobs immediately
 setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
+#setopt PROMPT_SUBST
 
 WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 
@@ -31,6 +35,7 @@ bindkey '^[[Z' undo                               # shift + tab undo last action
 
 # enable completion features
 autoload -Uz compinit
+autoload -Uz vcs_info
 compinit -d ~/.cache/zcompdump
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' auto-description 'specify: %d'
@@ -97,7 +102,7 @@ configure_prompt() {
     [ "$EUID" -eq 0 ] && prompt_symbol=💀
     case "$PROMPT_ALTERNATIVE" in
         twoline)
-            PROMPT=$'%F{%(#.blue.green)}┌──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n$prompt_symbol%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
+            PROMPT=$'%F{%(#.blue.green)}┌──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n$prompt_symbol%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]${vcs_info_msg_0_}\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
             RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
             ;;
         oneline)
@@ -197,6 +202,7 @@ xterm*|rxvt*|Eterm|aterm|kterm|gnome*|alacritty)
 esac
 
 precmd() {
+    vcs_info
     # Print the previously configured title
     print -Pnr -- "$TERM_TITLE"
 
@@ -234,6 +240,10 @@ if [ -x /usr/bin/dircolors ]; then
     # Take advantage of $LS_COLORS for completion as well
     zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
     zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+
+    # Format the vcs_info_msg_0_ variable
+    # F{red}${vcs_info_msg_0_}%F{%(#.blue.green)}
+    zstyle ':vcs_info:git:*' formats ' %F{white}git:(%F{%(#.blue.green)}%F{red}%b%F{white})%F{reset}%F{%(#.green)}'
 fi
 
 # some more ls aliases
