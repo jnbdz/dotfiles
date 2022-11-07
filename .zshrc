@@ -4,6 +4,15 @@
 # - Kali Linux
 # - https://www.themoderncoder.com/add-git-branch-information-to-your-zsh-prompt/
 
+# enable line search
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search # Up
+bindkey "${terminfo[kcud1]}" down-line-or-beginning-search # Down
+
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
@@ -35,6 +44,7 @@ bindkey '^[[Z' undo                               # shift + tab undo last action
 
 # enable completion features
 autoload -Uz compinit
+# enable vcs (git) info
 autoload -Uz vcs_info
 compinit -d ~/.cache/zcompdump
 zstyle ':completion:*:*:*:*:*' menu select
