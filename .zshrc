@@ -3,6 +3,7 @@
 # Sources: 
 # - Kali Linux
 # - https://www.themoderncoder.com/add-git-branch-information-to-your-zsh-prompt/
+# - https://superuser.com/questions/585003/searching-through-history-with-up-and-down-arrow-in-zsh
 
 # enable line search
 autoload -U up-line-or-beginning-search
