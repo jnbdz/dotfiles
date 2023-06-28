@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=WebStorm
+Comment=Code Editing for Web dev.
+GenericName=Text Editor
+Exec=/opt/webstorm/bin/webstorm.sh %F
+Icon=/opt/webstorm/bin/webstorm.svg
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;text/html;text/css;text/javascript;application/javascript;
+Keywords=webstorm;
