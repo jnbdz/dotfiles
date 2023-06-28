@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=PHPStorm
+Comment=Code Editing for PHP.
+GenericName=Text Editor
+Exec=/opt/phpstorm/bin/phpstorm.sh %F
+Icon=/opt/phpstorm/bin/phpstorm.svg
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;text/html;text/css;text/javascript;application/javascript;text/php;
+Keywords=phpstorm;
