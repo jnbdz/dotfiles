@@ -134,6 +134,11 @@ uninstall-st: ## Uninstall the st terminal
 	rm -f /usr/local/bin/st-urlhandler
 	rm -f /usr/local/share/man/man1/st.1
 
+.PHONY: python-pip
+python-pip: ## Install Python pip
+	curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+	sudo python3 get-pip.py --prefix=/usr/local/
+
 .PHONY: dev
 dev: ## Setup the dev environment
 	export DEBIAN_FRONTEND=noninteractive
@@ -157,7 +162,6 @@ dev: ## Setup the dev environment
 		gstreamer1.0-gtk3 \
 		gstreamer1.0-qt5 \
 		gstreamer1.0-pulseaudio
-	sudo python3 get-pip.py --prefix=/usr/local/
 	sudo python3 -m pip install --upgrade pip setuptools wheel
 	echo "\n[registries.search]\nregistries = ['docker.io', 'quay.io', 'registry.fedoraproject.org', 'registry.access.redhat.com']" | sudo tee -a /etc/containers/registries.conf
 	mkdir -p $(HOME)/.local/share/applications/
