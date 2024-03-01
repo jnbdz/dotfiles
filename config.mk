@@ -1,3 +1,4 @@
+GITHUB_HOST = github.com
 GITHUB_USER = jnbdz
 
 ST_GITHUB_USER = $(GITHUB_USER)

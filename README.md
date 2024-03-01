@@ -223,6 +223,7 @@ apt update
 
 ## Sources
 - get-pip.py - https://bootstrap.pypa.io/get-pip.py and https://packaging.python.org/en/latest/tutorials/installing-packages/
+  - https://github.com/pypa/get-pip
 
 ## Activate the SSH
 Verify that the `~/.ssh/` dir has the right permission level: 
