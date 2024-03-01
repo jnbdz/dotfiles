@@ -4,7 +4,7 @@ ST_GITHUB_USER = $(GITHUB_USER)
 ST_VERSION = 0.8.4
 
 DWM_GITHUB_USER = $(GITHUB_USER)
-DWM_VERSION = 6.2
+DWM_VERSION = 6.4
 
 # Dev IDEs versions
 androidStudioVersion = 2021.2.1.15
