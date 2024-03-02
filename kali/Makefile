@@ -37,7 +37,8 @@ utils: path-picker csvquote ## Install the utils
 	sudo apt-get install -y \
 		kazam \
 		flameshot \
-		fzf
+		fzf \
+		jq
 
 .PHONY: path-picker
 path-picker: ## Install the Facebook path picker util
