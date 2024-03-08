@@ -38,7 +38,8 @@ utils: path-picker csvquote ## Install the utils
 		kazam \
 		flameshot \
 		fzf \
-		jq
+		jq \
+		httpie
 
 .PHONY: path-picker
 path-picker: ## Install the Facebook path picker util
@@ -114,6 +115,23 @@ dev: idea pycharm goland clion webstorm rstudio ## Dev tools install
 		git-flow \
 		podman \
 		podman-compose
+
+.PHONY: hoppscotch
+hoppscotch: ## Install Hoppscotch (similar to Postman)	
+	wget https://github.com/hoppscotch/releases/releases/latest/download/Hoppscotch_linux_x64.deb
+	sudo dpkg -i Hoppscotch_linux_x64.deb
+	sudo apt update
+	sudo apt-get install libwebkit2gtk-4.0-37
+	rm Hoppscotch_linux_x64.deb
+
+.PHONY: soapui
+soapui: ## Install SoapUI
+	wget https://dl.eviware.com/soapuios/5.7.2/SoapUI-$(soapuiVersion)-linux-bin.tar.gz
+	tar -xvf SoapUI-$(soapuiVersion)-linux-bin.tar.gz
+	mv ./SoapUI-$(soapuiVersion) /opt/SoapUI
+	mkdir -p $(HOME)/.local/share/applications/
+	$(HOME)/.local/share/applications/
+	cp -r $(CURDIR)/.local/share/icons/SoapUI/ /usr/share/icons/
 
 .PHONY: idea
 idea: ## Install IntelliJ for Java & Kotlin dev

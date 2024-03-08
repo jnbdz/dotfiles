@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=dmenu
+Comment=Suckless dmenu.
+GenericName=Menu
+Exec=dmenu %F
+Type=Application
+StartupNotify=false
+StartupWMClass=Menu
+Categories=Menu;
+Keywords=dmenu;menu;

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=httpie
+Comment=cURL-like command-line HTTP client.
+GenericName=httpie
+Exec=/opt/httpie/HTTPie.AppImage
+Icon=/usr/share/icons/httpie/httpie.png
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=Development;API;IDE;
+MimeType=application/json;
+Keywords=httpie;http;https;

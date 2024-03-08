@@ -8,6 +8,7 @@ DWM_GITHUB_USER = $(GITHUB_USER)
 DWM_VERSION = 6.4
 
 # Dev IDEs versions
+soapuiVersion = 5.7.2
 androidStudioVersion = 2021.2.1.15
 ideaVersion = 2023.3.4
 pycharmVersion = 2022.1.3
