@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=CLion
+Comment=Code Editing for C/C++.
+GenericName=Text Editor
+Exec=/opt/clion/bin/clion.sh %F
+Icon=/opt/clion/bin/clion.svg
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;
+Keywords=clion;C;C++;CLion;

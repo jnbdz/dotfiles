@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=surf
+Comment=Suckless browser.
+GenericName=Browser
+Exec=surf %F
+Type=Application
+StartupNotify=false
+StartupWMClass=Browse
+Categories=Browser;
+Keywords=surf;browser;

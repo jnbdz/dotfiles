@@ -10,11 +10,11 @@ all: ## Please set OS var to select the distro you want to setup. Use OS=qubes, 
 # You can conditionally include them like this:
 
 ifeq ($(OS),qubes-os)
-include qubes/Makefile
+include distros/qubes/Makefile
 else ifeq ($(OS),kali)
-include kali/Makefile
+include distros/kali/Makefile
 else ifeq ($(OS),rocky)
-include rocky/Makefile
+include distros/rocky/Makefile
 else
 $(error OS variable is not set correctly. Use OS=qubes, OS=kali, or OS=rocky.)
 endif

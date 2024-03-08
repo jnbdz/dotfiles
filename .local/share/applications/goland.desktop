@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=GoLand
+Comment=Code Editing for Go.
+GenericName=Text Editor
+Exec=/opt/goland/bin/goland.sh %F
+Icon=/opt/goland/bin/goland.svg
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;
+Keywords=goland;Go;Golang;

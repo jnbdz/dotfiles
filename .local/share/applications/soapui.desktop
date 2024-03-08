@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=SoapUI
+Comment=SoapUI is a free and open source cross-platform functional testing solution for APIs and web services.
+GenericName=soapui
+Exec=/opt/SoapUI/bin/soapui.sh
+Icon=/usr/share/icons/SoapUI/soapui-icon.png
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=Development;API;IDE;
+MimeType=application/xml;application/json;
+Keywords=soap;soapui;
