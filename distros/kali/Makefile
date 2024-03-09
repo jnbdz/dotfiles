@@ -39,7 +39,8 @@ utils: path-picker csvquote ## Install the utils
 		flameshot \
 		fzf \
 		jq \
-		httpie
+		httpie \
+		shellcheck
 
 .PHONY: path-picker
 path-picker: ## Install the Facebook path picker util
@@ -67,7 +68,7 @@ csvquote: ## Install csvquote util
 	rm -rf $(CURDIR)/csvquote
 
 .PHONY: suckless
-suckless: dwm-setup dmenu-setup st ## Install all the packages that are needed to compile the Suckless projects
+suckless: ## Install all the packages that are needed to compile the Suckless projects
 	sudo apt-get update
 	sudo apt-get install -y \
 		libx11-dev \
@@ -89,6 +90,12 @@ dwm-build: ## Build dwm
 
 .PHONY: dmenu-setup
 dmenu: ## Setup dmenu
+	sudo -i && exit
+	git clone git@$(GITHUB_HOST):$(GITHUB_USER)/dmenu.git
+	sudo mv dmenu /opt/
+	cd /opt/dmenu
+	sudo make install
+	cd $(CURDIR)
 
 .PHONY: reverse-engineering
 reverse-engineering: ## Install reverse engineering tools
