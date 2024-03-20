@@ -15,3 +15,6 @@ pycharmVersion = 2022.1.3
 clionVersion = 2023.3.4
 rStudioVersion = 2022.07.0-548
 vsCodeVersion = 1.69.0-1657183742
+
+# Utilities
+batVersion = 0.24.0

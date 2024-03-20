@@ -42,6 +42,19 @@ utils: path-picker csvquote ## Install the utils
 		httpie \
 		shellcheck
 
+.PHONY: bat
+bat: ## Install bat utility
+	sudo -i && exit
+	wget https://github.com/sharkdp/bat/releases/download/v$(batVersion)/bat_$(batVersion)_amd64.deb
+	sudo dpkg -i ./bat_$(batVersion)_amd64.deb
+
+.PHONY: gitmultihost
+gitmultihost: ## Install gitmultihost
+	sudo -i && exit
+	git clone git@github.com:jnbdz/gitmultihost.git
+	cd gitmultihost
+	sudo make install
+
 .PHONY: path-picker
 path-picker: ## Install the Facebook path picker util
 	sudo -i && exit
