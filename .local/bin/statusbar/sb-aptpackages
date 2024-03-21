@@ -24,4 +24,4 @@ case $BLOCK_BUTTON in
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-apt list --upgradable |& grep -vi "warning" | sed -r '/^\s*$/d' | grep -Fcv "Listing..." | sed "s/^/📦/;s/^📦0$//g" 
+apt list --upgradable |& grep -vi "warning" | sed -r '/^\s*$/d' | grep -Fcv "Listing..." | sed "s/^/📦 /;s/^📦 0$//g"
