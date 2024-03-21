@@ -9,7 +9,8 @@ basic: ## Install the basic applications and daemons
 	sudo apt-get upgrade -y
 	sudo apt-get install -y \
 		build-essential \
-		fonts-noto-color-emoji
+		fonts-noto-color-emoji \
+		ttf-bitstream-vera
 	mkdir -p $(HOME)/.backup
 	mv $(HOME)/.zshrc $(HOME)/.backup
 	mv $(HOME)/.vimrc $(HOME)/.backup
