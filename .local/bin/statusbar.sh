@@ -4,6 +4,7 @@
 last_weather_update=$(date +%s --date='-1 hour')
 last_package_update=$(date +%s --date='-2 hours')
 last_disk_update=$(date +%s --date='-1 hour')
+last_memory_update=$(date +%s --date='-1 minute')
 
 update_weather() {
     WEATHER=$(./statusbar/sb-forecast)
@@ -23,10 +24,17 @@ update_disk() {
     echo "Update disk"
 }
 
+update_memory() {
+    MEMORY=$(./statusbar/sb-memory)
+    last_memory_update=$(date +%s)
+    echo "Update memory"
+}
+
 while true; do
     # Always update time
     CLOCK=$(./statusbar/sb-clock)
     BATTERY=$(./statusbar/sb-battery)
+    CPUBARS=$(./statusbar/sb-cpubars)
     
     # Get the current time in seconds since epoch
     current_time=$(date +%s)
@@ -45,9 +53,14 @@ while true; do
     if [ $(($current_time - $last_disk_update)) -ge 3600 ]; then
         update_disk
     fi
+
+    # Update memory if it has been a minute
+    if [ $(($current_time - $last_memory_update)) -ge 60 ]; then
+        update_memory
+    fi
     
     # Set the root window name to update the status bar
-    xsetroot -name "$DISK | $PACKAGE_STATUS | $WEATHER | $BATTERY | $CLOCK"
+    xsetroot -name " $CPUBARS | $MEMORY | $DISK | $PACKAGE_STATUS | $WEATHER | $BATTERY | $CLOCK"
     
     # Sleep for 10 seconds before updating again
     sleep 1
