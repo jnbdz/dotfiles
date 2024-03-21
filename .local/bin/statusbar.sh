@@ -26,6 +26,7 @@ update_disk() {
 while true; do
     # Always update time
     CLOCK=$(./statusbar/sb-clock)
+    BATTERY=$(./statusbar/sb-battery)
     
     # Get the current time in seconds since epoch
     current_time=$(date +%s)
@@ -46,7 +47,7 @@ while true; do
     fi
     
     # Set the root window name to update the status bar
-    xsetroot -name "$DISK | $PACKAGE_STATUS | $WEATHER | $CLOCK"
+    xsetroot -name "$DISK | $PACKAGE_STATUS | $WEATHER | $BATTERY | $CLOCK"
     
     # Sleep for 10 seconds before updating again
     sleep 1
