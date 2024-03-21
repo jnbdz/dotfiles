@@ -1,37 +1,49 @@
 #!/bin/sh
 
-# Prints all batteries, their percentage remaining and an emoji corresponding
-# to charge status (🔌 for plugged up, 🔋 for discharging on battery, etc.).
+# This script prints all attached batteries, their percentage remaining, 
+# and an emoji corresponding to their charge status.
+# It also handles mouse scroll to adjust screen brightness and opens the script in an editor on click.
 
+# Notification with battery status legends when right-clicked
 case $BLOCK_BUTTON in
-	3) notify-send "🔋 Battery module" "🔋: discharging
+    3) notify-send "🔋 Battery module" "🔋: discharging
 🛑: not charging
 ♻: stagnant charge
 🔌: charging
 ⚡: charged
 ❗: battery very low!
 - Scroll to change adjust xbacklight." ;;
-	4) xbacklight -inc 10 ;;
-	5) xbacklight -dec 10 ;;
-	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+    4) xbacklight -inc 10 ;;  # Increase screen brightness
+    5) xbacklight -dec 10 ;;  # Decrease screen brightness
+    6) "$TERMINAL" -e "$EDITOR" "$0" ;;  # Open this script in an editor
 esac
 
-# Loop through all attached batteries and format the info
+# Loop through all attached batteries and format the information
 for battery in /sys/class/power_supply/BAT?*; do
-	# If non-first battery, print a space separator.
-	[ -n "${capacity+x}" ] && printf " "
-	# Sets up the status and capacity
-	case "$(cat "$battery/status" 2>&1)" in
-		"Full") status="⚡" ;;
-		"Discharging") status="🔋" ;;
-		"Charging") status="🔌" ;;
-		"Not charging") status="🛑" ;;
-		"Unknown") status="♻️" ;;
-		*) exit 1 ;;
-	esac
-	capacity="$(cat "$battery/capacity" 2>&1)"
-	# Will make a warn variable if discharging and low
-	[ "$status" = "🔋" ] && [ "$capacity" -le 25 ] && warn="❗"
-	# Prints the info
-	printf "%s%s%d%%" "$status" "$warn" "$capacity"; unset warn
-done && printf "\\n"
+    # If this isn't the first battery, print a space separator
+    [ -n "${capacity+x}" ] && printf " "
+    
+    # Read the current status and capacity from system files
+    status=$(cat "$battery/status" 2>&1)
+    capacity=$(cat "$battery/capacity" 2>&1)
+    
+    # Determine the status emoji
+    case "$status" in
+        "Full") status_emoji="⚡" ;;
+        "Discharging") status_emoji="🔋" ;;
+        "Charging") status_emoji="🔌" ;;
+        "Not charging") status_emoji="🛑" ;;
+        "Unknown") status_emoji="♻" ;;
+        *) exit 1 ;;  # Exit on unexpected status
+    esac
+    
+    # Determine if a low battery warning is needed
+    [ "$status_emoji" = "🔋" ] && [ "$capacity" -le 25 ] && warn="❗"
+    
+    # Print the battery status and capacity
+    printf "%s%s%d%%" "$status_emoji" "$warn" "$capacity"
+    unset warn  # Clear the warning for the next battery
+done
+
+# Ensure the output ends with a newline character
+printf "\n"
