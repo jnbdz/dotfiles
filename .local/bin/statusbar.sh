@@ -9,25 +9,21 @@ last_memory_update=$(date +%s --date='-1 minute')
 update_weather() {
     WEATHER=$(./statusbar/sb-forecast)
     last_weather_update=$(date +%s)
-    echo "Update weather"
 }
 
 update_packages() {
     PACKAGE_STATUS=$(./statusbar/sb-aptpackages)
     last_package_update=$(date +%s)
-    echo "Update packages count"
 }
 
 update_disk() {
     DISK=$(./statusbar/sb-disk)
     last_disk_update=$(date +%s)
-    echo "Update disk"
 }
 
 update_memory() {
     MEMORY=$(./statusbar/sb-memory)
     last_memory_update=$(date +%s)
-    echo "Update memory"
 }
 
 while true; do
