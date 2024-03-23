@@ -60,7 +60,7 @@ while true; do
     fi
     
     # Set the root window name to update the status bar
-    xsetroot -name " $CPUBARS | $MEMORY | $DISK | $PACKAGE_STATUS | $WEATHER | $BATTERY | $CLOCK"
+    xsetroot -name " $WEATHER | $CPUBARS $MEMORY $DISK $PACKAGE_STATUS $BATTERY | $CLOCK"
     
     # Sleep for 10 seconds before updating again
     sleep 1
