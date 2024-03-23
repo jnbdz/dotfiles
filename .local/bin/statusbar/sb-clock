@@ -22,7 +22,7 @@ cal_icon="🗓"
 clock_icon=$icon # This will use the appropriate emoji based on the hour
 
 # For date and time formatting
-formatted_date=$(date '+%Y %b %d (%a)')
+formatted_date=$(date '+%Y %b %d %a')
 formatted_time=$(date '+%I:%M:%S%p')
 
 case $BLOCK_BUTTON in
