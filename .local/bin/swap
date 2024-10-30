@@ -1,0 +1,1 @@
+sudo swapon --priority 100 /swapfile
