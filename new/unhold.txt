@@ -1,0 +1,174 @@
+=== Unheld kernel packages ===
+linux-headers-6.18.9+kali-cloud-amd64
+linux-headers-6.18.9+kali-rt-amd64
+linux-image-6.18.9+kali-amd64-dbg
+linux-image-6.18.9+kali-cloud-amd64
+linux-image-6.18.9+kali-cloud-amd64-dbg
+linux-image-6.18.9+kali-rt-amd64
+linux-image-6.18.9+kali-rt-amd64-dbg
+
+Removing hold on these packages...
+
+=== Updating package lists ===
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Hit:1 http://http.kali.org/kali kali-rolling InRelease
+Get:2 https://repo.steampowered.com/steam stable InRelease [3,622 B]
+Hit:3 https://packages.microsoft.com/repos/code stable InRelease
+Get:4 https://download.sublimetext.com apt/stable/ InRelease [2,948 B]
+Hit:5 https://dl.k6.io/deb stable InRelease
+Hit:6 https://packages.opentofu.org/opentofu/tofu/any any InRelease
+Fetched 6,570 B in 1s (4,385 B/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+31 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+=== Upgrading kernel ===
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages were automatically installed and are no longer required:
+  amass-common               libosmesa6
+  android-libboringssl       libpkgconf3
+  curlftpfs                  libplacebo349
+  firmware-ti-connectivity   libplacebo351
+  golang-1.24                libpocketsphinx3
+  golang-1.24-doc            libportmidi0
+  golang-1.24-go             libpostproc58
+  golang-1.24-src            libpyside2-py3-5.15t64
+  libabsl20230802            libradare2-5.0.0t64
+  libarmadillo14             librav1e0.7
+  libaudio2                  librubberband2
+  libavdevice61              libsdl1.2debian
+  libavfilter10              libsframe2
+  libavformat61              libsharpyuv-dev
+  libboost-filesystem1.83.0  libshiboken2-py3-5.15t64
+  libboost-locale1.83.0      libsimdjson29
+  libbotan-2-19              libsimdutf29
+  libbson-1.0-0t64           libsnmp40t64
+  libcap-dev                 libsox-fmt-base
+  libconfig-inifiles-perl    libsox3
+  libcrypt-dev               libsphinxbase3t64
+  libdeflate-dev             libsqlcipher1
+  libdisplay-info2           libswscale8
+  libdlt2                    libtiff-dev
+  libdnnl3                   libtiffxx6
+  libdnnl3.6                 libtss2-fapi1t64
+  libgav1-1                  libvdpau-va-gl1
+  libgavl2                   libvpx9
+  libgdal37                  libwebp-dev
+  libgeos3.14.0              libwebpdecoder3
+  libgnome-desktop-3-20t64   libwireshark18
+  libgnome-rr-4-2t64         libwiretap15
+  libgpgme11t64              libwsutil16
+  libgpgmepp6t64             libx264-164
+  libgsoap-2.8.135           libxnnpack0
+  libinstpatch-1.0-2         libxnnpack0.20241108
+  libjbig-dev                libyelp0
+  libjpeg-dev                libzstd-dev
+  libjpeg62-turbo-dev        libzxing3
+  libjs-jquery-ui            pocketsphinx-en-us
+  libjxl0.10                 python3-bluepy
+  liblerc-dev                python3-click-plugins
+  liblua5.2-0                python3-fs
+  libmjpegutils-2.1-0t64     python3-kismetcapturebtgeiger
+  libmms0                    python3-kismetcapturefreaklabszigbee
+  libmongoc-1.0-0t64         python3-kismetcapturertl433
+  libmozjs-128-0             python3-kismetcapturertladsb
+  libmpeg2encpp-2.1-0t64     python3-kismetcapturertlamr
+  libmplex2-2.1-0t64         python3-multipart
+  libmupdf25.1               python3-pysmi
+  libnet1                    python3-terminaltables
+  libonnx1t64                python3-xlrd
+  libonnxruntime-providers   python3-xlutils
+  libonnxruntime1.21         python3-xlwt
+  libopenh264-7              python3-yaswfp
+  liborcus-0.18-0            ruby-unf-ext
+  liborcus-0.20-0            samba-ad-provision
+  liborcus-parser-0.18-0     samba-dsdb-modules
+  liborcus-parser-0.20-0     vdpau-driver-all
+Use 'sudo apt autoremove' to remove them.
+
+Upgrading:
+  linux-image-amd64
+
+Installing dependencies:
+  linux-base-6.18.12+kali-amd64  linux-image-6.18.12+kali-amd64
+  linux-base-amd64
+
+Suggested packages:
+  debian-kernel-handbook  linux-doc-6.18
+
+Not upgrading:
+  breeze                 kde-style-breeze-qt5      libspa-0.2-bluetooth
+  breeze-cursor-theme    kwin-style-breeze         libspa-0.2-modules
+  breeze-wallpaper       libguestfs-hfsplus        pipewire
+  graphviz               libguestfs-perl           pipewire-alsa
+  gstreamer1.0-pipewire  libguestfs-tools          pipewire-bin
+  guestfish              libguestfs-xfs            pipewire-pulse
+  guestfs-tools          libguestfs0t64            python-tables-data
+  guestmount             libonnxruntime-providers  python3-pygraphviz
+  kde-style-breeze       libpipewire-0.3-0t64      python3-tables
+  kde-style-breeze-data  libpipewire-0.3-modules   python3-tables-lib
+
+Summary:
+  Upgrading: 1, Installing: 3, Removing: 0, Not Upgrading: 30
+  Download size: 114 MB
+  Space needed: 351 MB / 329 GB available
+
+Get:1 http://http.kali.org/kali kali-rolling/main amd64 linux-base-6.18.12+kali-amd64 amd64 6.18.12-1kali1 [955 kB]
+Get:2 http://http.kali.org/kali kali-rolling/main amd64 linux-image-6.18.12+kali-amd64 amd64 6.18.12-1kali1 [113 MB]
+Get:3 http://kali.download/kali kali-rolling/main amd64 linux-base-amd64 amd64 6.18.12-1kali1 [1,208 B]
+Get:4 http://kali.download/kali kali-rolling/main amd64 linux-image-amd64 amd64 6.18.12-1kali1 [1,508 B]
+Fetched 114 MB in 5s (24.6 MB/s)
+Selecting previously unselected package linux-base-6.18.12+kali-amd64.
+(Reading database… (Reading database… 5%(Reading database… 10%(Reading database… 15%(Reading database… 20%(Reading database… 25%(Reading database… 30%(Reading database… 35%(Reading database… 40%(Reading database… 45%(Reading database… 50%(Reading database… 55%(Reading database… 60%(Reading database… 65%(Reading database… 70%(Reading database… 75%(Reading database… 80%(Reading database… 85%(Reading database… 90%(Reading database… 95%(Reading database… 100%(Reading database… 761324 files and directories currently installed.)
+Preparing to unpack …/linux-base-6.18.12+kali-amd64_6.18.12-1kali1_amd64.deb…
+Unpacking linux-base-6.18.12+kali-amd64 (6.18.12-1kali1)…
+Selecting previously unselected package linux-image-6.18.12+kali-amd64.
+Preparing to unpack …/linux-image-6.18.12+kali-amd64_6.18.12-1kali1_amd64.deb…
+Unpacking linux-image-6.18.12+kali-amd64 (6.18.12-1kali1)…
+Selecting previously unselected package linux-base-amd64.
+Preparing to unpack …/linux-base-amd64_6.18.12-1kali1_amd64.deb…
+Unpacking linux-base-amd64 (6.18.12-1kali1)…
+Preparing to unpack …/linux-image-amd64_6.18.12-1kali1_amd64.deb…
+Unpacking linux-image-amd64 (6.18.12-1kali1) over (6.16.8-1kali1)…
+Setting up linux-base-6.18.12+kali-amd64 (6.18.12-1kali1)…
+Setting up linux-base-amd64 (6.18.12-1kali1)…
+Setting up linux-image-6.18.12+kali-amd64 (6.18.12-1kali1)…
+I: /vmlinuz.old is now a symlink to boot/vmlinuz-6.18.9+kali-amd64
+I: /initrd.img.old is now a symlink to boot/initrd.img-6.18.9+kali-amd64
+I: /vmlinuz is now a symlink to boot/vmlinuz-6.18.12+kali-amd64
+I: /initrd.img is now a symlink to boot/initrd.img-6.18.12+kali-amd64
+/etc/kernel/postinst.d/dkms:
+Automatic installation of modules for kernel 6.18.12+kali-amd64 was skipped since the kernel headers for this kernel do not seem to be installed.
+/etc/kernel/postinst.d/initramfs-tools:
+update-initramfs: Generating /boot/initrd.img-6.18.12+kali-amd64
+/etc/kernel/postinst.d/zz-update-grub:
+Generating grub configuration file ...
+Found theme: /boot/grub/themes/kali/theme.txt
+Found background image: /usr/share/images/desktop-base/desktop-grub.png
+Found linux image: /boot/vmlinuz-6.18.12+kali-amd64
+Found initrd image: /boot/initrd.img-6.18.12+kali-amd64
+Found linux image: /boot/vmlinuz-6.18.9+kali-amd64
+Found initrd image: /boot/initrd.img-6.18.9+kali-amd64
+Found linux image: /boot/vmlinuz-6.16.8+kali-amd64
+Found initrd image: /boot/initrd.img-6.16.8+kali-amd64
+Found linux image: /boot/vmlinuz-6.12.38+kali-amd64
+Found initrd image: /boot/initrd.img-6.12.38+kali-amd64
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Found Windows Boot Manager on /dev/nvme0n1p1@/efi/Microsoft/Boot/bootmgfw.efi
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Setting up linux-image-amd64 (6.18.12-1kali1)…
+
+=== Done ===
+Current kernel: 6.18.9+kali-amd64
+Reboot to use the new kernel: sudo reboot

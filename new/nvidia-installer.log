@@ -1,0 +1,26 @@
+nvidia-installer log file '/var/log/nvidia-installer.log'
+creation time: Sun Apr  5 11:27:40 2026
+installer version: 595.58.03
+
+PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+nvidia-installer command line:
+    ./nvidia-installer
+    --silent
+    --dkms
+
+Using built-in stream user interface
+-> Detected 32 CPUs online; setting concurrency level to 32.
+-> Scanning the initramfs with lsinitramfs...
+-> Executing: /usr/bin/lsinitramfs   -l /boot/initrd.img-6.18.12+kali-amd64
+-> Multiple kernel module types are available for this system. Which would you like to use? (Answer: MIT/GPL)
+-> Installing NVIDIA driver version 595.58.03.
+-> The NVIDIA driver appears to have been installed previously using a different installer. To prevent potential conflicts, it is recommended either to update the existing installation using the same mechanism by which it was originally installed, or to uninstall the existing installation before installing this driver.
+
+Please review the message provided by the maintainer of this alternate installation method and decide how to proceed:
+
+Please use the Debian packages instead of the .run file.
+
+
+(Answer: Abort installation)
+ERROR: The installation was canceled due to the availability or presence of an alternate driver installation. Please see /var/log/nvidia-installer.log for more details.

@@ -1,0 +1,59 @@
+=== GUI Freeze Diagnosis ===
+Date: Sat Apr  4 08:46:59 PM EDT 2026
+
+=== Active Window ===
+Error: Can't open display: (null)
+Failed creating new xdo instance
+
+=== Active Window Property ===
+
+=== Top CPU Processes ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+jn          3134  2.1  0.7 2040500 517260 tty1   SLl  20:19   0:35 /home/jn/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize
+jn          7359  0.6  0.0 305304 17620 tty1     Sl   20:46   0:00 /usr/libexec/glycin-loaders/2+/glycin-svg --dbus-fd 22
+jn          1960  0.3  0.1 25542348 103716 tty1  Sl   20:19   0:06 /usr/lib/xorg/Xorg -nolisten tcp :1 vt1 -keeptty -auth /tmp/serverauth.FvYdbUnCeV
+jn          2309  0.2  0.4 520544 270424 tty1    Sl   20:19   0:03 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libcpugraph.so 13 14680077 cpugraph CPU Graph Graphical representation of the CPU load
+jn          4337  0.2  0.1 36585876 88048 tty1   SLl  20:19   0:03 /home/jn/.local/share/JetBrains/Daemon/bundles/current/jetbrainsd/bin/jetbrainsd run
+jn          2173  0.0  0.1 3120336 88432 tty1    Sl   20:19   0:01 xfdesktop
+jn          2115  0.0  0.1 2928784 90944 tty1    Sl   20:19   0:01 xfwm4
+root           1  0.0  0.0  25404 16004 ?        Ss   20:18   0:01 /sbin/init single dis_ucode_ldr
+root          15  0.0  0.0      0     0 ?        I    20:18   0:01 [rcu_preempt]
+jn          2160  0.0  0.0 2959148 50244 tty1    Sl   20:19   0:00 xfce4-panel
+jn          4850  0.0  0.0  14132  7952 tty3     Ss   20:21   0:00 -zsh
+root        1353  0.0  0.0 25378004 65108 tty2   Ssl+ 20:18   0:00 /usr/lib/xorg/Xorg -nolisten tcp -background none -seat seat0 vt2 -auth /run/sddm/xauth_UFxHUa -noreset -displayfd 16
+message+    1164  0.0  0.0  11228  8432 ?        Ss   20:18   0:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+systemd+    1362  0.0  0.0  16668  7532 ?        Ss   20:18   0:00 /usr/lib/systemd/systemd-oomd
+root        1297  0.0  0.0 337212 20412 ?        Ssl  20:18   0:00 /usr/sbin/NetworkManager --no-daemon
+root         235  0.0  0.0      0     0 ?        SN   20:18   0:00 [khugepaged]
+root         218  0.0  0.0      0     0 ?        I    20:18   0:00 [kworker/u128:10-kvfree_rcu_reclaim]
+jn          3158  0.0  0.0 3175016 54624 tty1    Sl   20:19   0:00 nm-applet
+jn          2178  0.0  0.0 2958672 53240 tty1    Sl   20:19   0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libwhiskermenu.so 1 14680071 whiskermenu Whisker Menu Show a menu to easily access installed applications
+
+=== Top Memory Processes ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+jn          3134  2.1  0.7 2040500 517260 tty1   SLl  20:19   0:35 /home/jn/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize
+jn          2309  0.2  0.4 520544 270424 tty1    Sl   20:19   0:03 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libcpugraph.so 13 14680077 cpugraph CPU Graph Graphical representation of the CPU load
+jn          1960  0.3  0.1 25542348 103716 tty1  Sl   20:19   0:06 /usr/lib/xorg/Xorg -nolisten tcp :1 vt1 -keeptty -auth /tmp/serverauth.FvYdbUnCeV
+jn          2115  0.0  0.1 2928784 90944 tty1    Sl   20:19   0:01 xfwm4
+jn          2173  0.0  0.1 3120336 88432 tty1    Sl   20:19   0:01 xfdesktop
+jn          4337  0.2  0.1 36585876 88048 tty1   SLl  20:19   0:03 /home/jn/.local/share/JetBrains/Daemon/bundles/current/jetbrainsd/bin/jetbrainsd run
+jn          3150  0.0  0.1 1063964 87232 tty1    Sl   20:19   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+jn          3161  0.0  0.1 615584 68320 tty1     Sl   20:19   0:00 /usr/bin/python3 /usr/bin/blueman-applet
+root        1353  0.0  0.0 25378004 65108 tty2   Ssl+ 20:18   0:00 /usr/lib/xorg/Xorg -nolisten tcp -background none -seat seat0 vt2 -auth /run/sddm/xauth_UFxHUa -noreset -displayfd 16
+jn          3855  0.0  0.0 830332 63132 ?        Ssl  20:19   0:00 /usr/libexec/evolution-source-registry
+jn          1966  0.0  0.0 839632 61016 tty1     Sl   20:19   0:00 xfce4-session
+jn          3158  0.0  0.0 3175016 54624 tty1    Sl   20:19   0:00 nm-applet
+jn          2178  0.0  0.0 2958672 53240 tty1    Sl   20:19   0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libwhiskermenu.so 1 14680071 whiskermenu Whisker Menu Show a menu to easily access installed applications
+jn          2160  0.0  0.0 2959148 50244 tty1    Sl   20:19   0:00 xfce4-panel
+jn          2316  0.0  0.0 2831608 48044 tty1    Sl   20:19   0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libpulseaudio-plugin.so 16 14680080 pulseaudio PulseAudio Plugin Adjust the audio volume of the PulseAudio sound system
+jn          2318  0.0  0.0 2756376 45520 tty1    Sl   20:19   0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libxfce4powermanager.so 18 14680082 power-manager-plugin Power Manager Plugin Display the battery levels of your devices and control the brightness of your display
+jn          2320  0.0  0.0 2887588 45424 tty1    Sl   20:19   0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libactions.so 22 14680083 actions Action Buttons Log out, lock or other system actions
+jn          2308  0.0  0.0 2757008 45236 tty1    Sl   20:19   0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libscreenshooterplugin.so 25 14680076 screenshooter Screenshot Take screenshots of the entire screen, of the active window or of a region
+jn          2317  0.0  0.0 2887176 44552 tty1    Sl   20:19   0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libnotification-plugin.so 17 14680081 notification-plugin Notification Plugin Notification plugin for the Xfce panel
+
+=== Window List ===
+./diagnose-gui.sh: 25: wmctrl: not found
+
+=== X Input Grabs ===
+./diagnose-gui.sh: 29: xinput: not found
+
